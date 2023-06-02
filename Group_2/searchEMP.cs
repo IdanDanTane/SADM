@@ -1,0 +1,149 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+namespace Group_2
+{
+    public partial class searchEMP : Form
+    {
+        public Employee temp;
+        public searchEMP()
+        {
+            InitializeComponent();
+            this.EmployeePhone.Enabled = false;
+            this.employeeBirthDate.Enabled = false;
+            this.EmployeeEmail.Enabled = false;
+            this.EmployeeFirstName.Enabled = false;
+            this.EmployeeLastName.Enabled = false;
+            this.EmployeeType_choose.Enabled = false;
+            this.deleteEMP.Enabled = false;  
+            this.UpdateEMP.Enabled = false;
+            EmployeeType_choose.DataSource = Enum.GetValues(typeof(employeeType));
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+                    }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void search_Employee_Click(object sender, EventArgs e)
+        {
+            if (Program.seekEmployee(EmployeeID.Text.ToString()) == null)
+            {
+                MessageBox.Show("employee does not exist. please try again");
+            }
+            else
+            {
+                search_Employee.Enabled = false;
+                deleteEMP.Enabled = true;
+                UpdateEMP.Enabled = true;
+                temp = Program.seekEmployee(EmployeeID.Text.ToString());
+                EmployeeID.Enabled = false;
+                this.EmployeePhone.AppendText(temp.phoneNumber);
+                this.employeeBirthDate.Value = temp.birthDate;
+                this.EmployeeEmail.AppendText(temp.email);
+                this.EmployeeFirstName.AppendText(temp.firstName);
+                this.EmployeeLastName.AppendText(temp.lastName);
+                this.EmployeeType_choose.SelectedItem=temp.employeeType;
+
+
+                this.EmployeePhone.Enabled = true;
+                this.employeeBirthDate.Enabled = true;
+                this.EmployeeEmail.Enabled = true;
+                this.EmployeeFirstName.Enabled = true;
+                this.EmployeeLastName.Enabled = true;
+                this.EmployeeType_choose.Enabled = true;
+            }
+        }
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void employeeBirthDate_ValueChanged(object sender, EventArgs e)
+        {
+            employeeBirthDate.CustomFormat = "yyyy-MM-dd";
+        }
+
+        private void EmployeeEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmployeeFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmployeeLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EmployeeType_choose_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            manageEmployees EMP = new manageEmployees();
+            EMP.Show();
+            this.Hide();
+
+        }
+
+        private void deleteEMP_Click(object sender, EventArgs e)
+        {
+            SQL_CON SC = new SQL_CON();
+            SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[Delete_Employee_And_RemoveToArchive] @employeeId", SC.getConnection());
+            r.SelectCommand.Parameters.AddWithValue("@employeeId", temp.employeeID);
+            SC.Execute_non_query(r);
+            Program.Employees.Remove(temp);
+
+        }
+
+        private void UpdateEMP_Click(object sender, EventArgs e)
+        { 
+            SQL_CON SC = new SQL_CON();
+            SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[update_employee] @employeeId, @phoneNumber, @email,@firstName , @lastName , @birthDate , @type", SC.getConnection());
+            r.SelectCommand.Parameters.AddWithValue("@employeeId", temp.employeeID);
+            r.SelectCommand.Parameters.AddWithValue("@phoneNumber", this.EmployeePhone.Text);
+            r.SelectCommand.Parameters.AddWithValue("@email", this.EmployeeEmail.Text);
+            r.SelectCommand.Parameters.AddWithValue("@firstName", this.EmployeeFirstName.Text);
+            r.SelectCommand.Parameters.AddWithValue("@lastName", this.EmployeeLastName.Text);
+            string newDateTime = this.employeeBirthDate.Value.ToString("yyyy-MM-dd");
+            r.SelectCommand.Parameters.AddWithValue("@birthDate", newDateTime);
+            r.SelectCommand.Parameters.AddWithValue("@type", this.EmployeeType_choose.Text);
+            SC.Execute_non_query(r);
+            temp.email = this.EmployeeEmail.Text;  
+            temp.firstName = this.EmployeeFirstName.Text; 
+            temp.lastName = this.EmployeeLastName.Text;
+            temp.phoneNumber = this.EmployeePhone.Text;
+            temp.birthDate = this.employeeBirthDate.Value;
+            temp.employeeType = (employeeType)Enum.Parse(typeof(employeeType), this.EmployeeType_choose.Text);
+        }
+    }
+}
