@@ -14,6 +14,8 @@ namespace Group_2
         /// </summary>
         public static System.Collections.Generic.List<Employee> Employees;
         public static System.Collections.Generic.List<Customer> Customers;
+        public static System.Collections.Generic.List<Product> Procducts;
+        public static System.Collections.Generic.List<Material> Materials;
         [STAThread]
         public static void init_Employees()//מילוי המערך מתוך בסיס הנתונים
         {
