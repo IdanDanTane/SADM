@@ -45,8 +45,6 @@ namespace Group_2
         {
                     SQL_CON SC = new SQL_CON();
                     SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[add_employee] @employeeId, @phoneNumber, @email,@firstName , @lastName , @birthDate , @type", SC.getConnection());
-                    //c.CommandText = "EXECUTE add_employee @employeeID,@phoneNumber, @email, @firstName, @lastName,@birthDate,@employeeType";
-                    //     c.CommandText = "EXECUTE [dbo].[add_employee] @employeeId, @phoneNumber, @email,@firstName , @lastName , @birthDate , @type)";
                     r.SelectCommand.Parameters.AddWithValue("@employeeId", this.employeeID);
                     r.SelectCommand.Parameters.AddWithValue("@phoneNumber", this.phoneNumber);
                     r.SelectCommand.Parameters.AddWithValue("@email", this.email);
