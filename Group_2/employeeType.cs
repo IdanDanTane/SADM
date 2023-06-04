@@ -13,6 +13,7 @@ namespace Group_2
         [Description("Shift manager")] Shift_manager,
         [Description("Food technologist")] Food_technologist,
         [Description("Stock keeper")]  Stock_keeper,
-        [Description("Warehouse manager")] Ware_house_manager
+        [Description("Warehouse manager")] Warehouse_manager
     }
+
 }
