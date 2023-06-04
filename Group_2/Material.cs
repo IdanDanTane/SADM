@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IdentityModel.Protocols.WSTrust;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -40,8 +41,27 @@ namespace Group_2
             this.amount = amount;
             if(isNew)
             {
+                this.createMaterial();
                 Program.Materials.Add(this);
             }
+        }
+
+        private void createMaterial()
+        {
+
+            SQL_CON SC = new SQL_CON();
+            SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[AddMaterial] @MaterialID, @Name, @PricePerTone , @MinimumThreshold, @Status, @Location, @ReceivedDate , @ExpirationDate ,@Amount ,", SC.getConnection());
+            r.SelectCommand.Parameters.AddWithValue("@MaterialID", this.Id);
+            r.SelectCommand.Parameters.AddWithValue("@Name", this.Name);
+            r.SelectCommand.Parameters.AddWithValue("@PricePerTone", this.pricePerTon);
+            r.SelectCommand.Parameters.AddWithValue("@MinimumThreshold", this.minimumThreshold);
+            r.SelectCommand.Parameters.AddWithValue("@Status", this.Status.ToString());
+            r.SelectCommand.Parameters.AddWithValue("@Location", this.Location.ToString());
+            r.SelectCommand.Parameters.AddWithValue("@ReceivedDate", this.recivedDate);
+            string newDateTime = this.expirationDate.ToString("yyyy-MM-dd");
+            r.SelectCommand.Parameters.AddWithValue("@ExpirationDate", newDateTime);
+            r.SelectCommand.Parameters.AddWithValue("@Amount", this.amount);
+            SC.Execute_non_query(r);
         }
     }
 }
