@@ -24,12 +24,32 @@ namespace Group_2
             this.EmployeeFirstName.Enabled = false;
             this.EmployeeLastName.Enabled = false;
             this.EmployeeType_choose.Enabled = false;
-            this.deleteEMP.Enabled = false;  
+            this.deleteEMP.Enabled = false;
             this.UpdateEMP.Enabled = false;
-            EmployeeType_choose.DataSource = Enum.GetValues(typeof(employeeType));
+            EmployeeType_choose.DataSource = GetEmployeeTypeList();
+            EmployeeType_choose.DisplayMember = "Description";
         }
+    
+        private List<EmployeeTypeItem> GetEmployeeTypeList()
+        {
+            var employeeTypes = Enum.GetValues(typeof(employeeType));
+            var employeeTypeList = new List<EmployeeTypeItem>();
 
-        private void Form1_Load(object sender, EventArgs e)
+            foreach (employeeType type in employeeTypes)
+            {
+                var descriptionAttribute = type.GetType().GetField(type.ToString())
+                    .GetCustomAttributes(typeof(DescriptionAttribute), false)
+                    .FirstOrDefault() as DescriptionAttribute;
+
+                var description = descriptionAttribute != null ? descriptionAttribute.Description : type.ToString();
+
+                employeeTypeList.Add(new EmployeeTypeItem { Value = type, Description = description });
+            }
+
+            return employeeTypeList;
+        }
+    
+    private void Form1_Load(object sender, EventArgs e)
         {
 
         }
@@ -143,7 +163,7 @@ namespace Group_2
             temp.lastName = this.EmployeeLastName.Text;
             temp.phoneNumber = this.EmployeePhone.Text;
             temp.birthDate = this.employeeBirthDate.Value;
-            temp.employeeType = (employeeType)Enum.Parse(typeof(employeeType), this.EmployeeType_choose.Text);
+            temp.employeeType = (employeeType)Enum.Parse(typeof(employeeType), this.EmployeeType_choose.Text.Replace(' ','_'));
         }
     }
 }
