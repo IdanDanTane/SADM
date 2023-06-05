@@ -14,6 +14,8 @@ namespace Group_2
         /// </summary>
         public static System.Collections.Generic.List<Employee> Employees;
         public static System.Collections.Generic.List<Customer> Customers;
+        public static System.Collections.Generic.List<Product> Procducts;
+        public static System.Collections.Generic.List<Material> Materials;
         [STAThread]
         public static void init_Employees()//מילוי המערך מתוך בסיס הנתונים
         {
@@ -44,6 +46,38 @@ namespace Group_2
             {
                 Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), false);
                 Customers.Add(cust);
+            }
+        }
+        public static void init_Materials()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewMaterial";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            Materials = new List<Material>();
+
+            while (rdr.Read())
+            {
+                Mstatus S = (Mstatus)Enum.Parse(typeof(Mstatus), rdr.GetValue(4).ToString());
+                Warehouse W = (Warehouse)Enum.Parse(typeof(Warehouse), rdr.GetValue(5).ToString());
+                Material m = new Material(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (decimal)rdr.GetValue(2), (decimal)rdr.GetValue(3), S,W, (DateTime)rdr.GetValue(6), (DateTime)rdr.GetValue(7), (decimal)rdr.GetValue(8), false);
+                Materials.Add(m);
+            }
+        }
+        public static void init_Products()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewProduct";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            Procducts = new List<Product>();
+
+            while (rdr.Read())
+            {
+                Product p = new Product(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (DateTime)rdr.GetValue(2),(decimal) rdr.GetValue(3), false);
+                Procducts.Add(p);
             }
         }
         public static Customer seekCustomer(string email)

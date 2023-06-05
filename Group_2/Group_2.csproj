@@ -181,6 +181,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmployeeTypeItem.cs" />
+    <Compile Include="Material.cs" />
+    <Compile Include="Mstatus.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="searchCUST.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -262,6 +266,7 @@
     <Compile Include="viewEMP.Designer.cs">
       <DependentUpon>viewEMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehouse.cs" />
     <EmbeddedResource Include="searchCUST.resx">
       <DependentUpon>searchCUST.cs</DependentUpon>
     </EmbeddedResource>
