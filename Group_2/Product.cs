@@ -10,7 +10,7 @@ namespace Group_2
 {
     public class Product
     {
-        public string Id { get; set; }
+        public string Id { get; set; }//indicates the id of the product
         public string Name { get; set; }
 
         public DateTime expirationDate { get; set; }
