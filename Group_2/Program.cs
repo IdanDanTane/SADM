@@ -89,7 +89,15 @@ namespace Group_2
             }
             return null;
         }
-
+        public static Material seekMaterial(string ID)
+        {
+            foreach (Material c in Materials)
+            {
+                if (c.Id == ID)
+                    return c;
+            }
+            return null;
+        }
 
 
         public static Employee seekEmployee(string id)
@@ -109,6 +117,8 @@ namespace Group_2
             Application.SetCompatibleTextRenderingDefault(false);
             init_Employees();
             init_Customers();
+            init_Materials();
+            init_Products();
             Application.Run(new Login());
         }
     }
