@@ -4,10 +4,11 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Group_2
 {
-    internal class Product
+    public class Product
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -56,7 +57,7 @@ namespace Group_2
 
             while (rdr.Read())
             {
-                componenets.Add((Material)rdr.GetValue(1), (decimal)rdr.GetValue(2));
+                componenets.Add(Program.seekMaterial(rdr.GetValue(1).ToString()), (decimal)rdr.GetValue(2));
             }
         }
 
