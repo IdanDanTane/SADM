@@ -70,9 +70,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(312, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 20);
+            this.label1.Size = new System.Drawing.Size(147, 20);
             this.label1.TabIndex = 4;
-            this.label1.Text = "manage customers";
+            this.label1.Text = "manage employees";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
@@ -96,7 +96,7 @@
             this.Controls.Add(this.addEMP);
             this.Controls.Add(this.button1);
             this.Name = "manageEmployees";
-            this.Text = "manage customers";
+            this.Text = "manage employees";
             this.ResumeLayout(false);
             this.PerformLayout();
 
