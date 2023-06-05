@@ -54,7 +54,9 @@ namespace Group_2
 
         private void materials_Click(object sender, EventArgs e)
         {
-
+            manageMaterials MAT = new manageMaterials();
+            MAT.Show();
+            this.Hide();
         }
 
         private void customers_Click(object sender, EventArgs e)
