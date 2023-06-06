@@ -14,7 +14,7 @@ namespace Group_2
 {
     public partial class searchCUST : Form
     {
-        public Customer temp;//temporaru bla
+        public Customer temp;
         public searchCUST()
         {
             InitializeComponent();
