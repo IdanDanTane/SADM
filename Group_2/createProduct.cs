@@ -33,14 +33,17 @@ namespace Group_2
         {
             Product p = new Product(
                 this.productID.Text,
+
                 this.productID.Text,
                 this.expirationDate.Value,
                 decimal.Parse(this.pricePerTon.Text),
                 (ProductType)Enum.Parse(typeof(ProductType), Type.Text.Replace(' ', '_')),true
+
             );
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+
                 string material = row.Cells["getMaterials"].Value.ToString();
                 string amount = row.Cells["Amount"].Value.ToString();
 
@@ -49,9 +52,7 @@ namespace Group_2
                 {
                     string selectedValue = comboBoxCell.Value?.ToString();
 
-
                 }
-
 
             }
         }
@@ -74,7 +75,7 @@ namespace Group_2
         private void expirationDate_ValueChanged(object sender, EventArgs e)
         {
             expirationDate.CustomFormat = "yyyy-MM-dd";
-            
+
         }
 
         private void Type_SelectedIndexChanged(object sender, EventArgs e)
@@ -82,11 +83,15 @@ namespace Group_2
 
         }
 
+
         private void Back_Click(object sender, EventArgs e)
         {
             homepage h = new homepage();
             h.Show();
             this.Hide();
         }
+
+
     }
 }
+//
