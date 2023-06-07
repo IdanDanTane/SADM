@@ -227,6 +227,7 @@
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(121, 28);
             this.Status.TabIndex = 23;
+            this.Status.SelectedIndexChanged += new System.EventHandler(this.Status_SelectedIndexChanged);
             // 
             // createMAT
             // 
