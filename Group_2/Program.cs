@@ -112,7 +112,8 @@ namespace Group_2
 
             while (rdr.Read())
             {
-                Product p = new Product(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (DateTime)rdr.GetValue(2),(decimal) rdr.GetValue(3), false);
+                ProductType T = (ProductType)Enum.Parse(typeof(ProductType), rdr.GetValue(4).ToString());
+                Product p = new Product(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (DateTime)rdr.GetValue(2),(decimal) rdr.GetValue(3),T ,false);
                 Procducts.Add(p);
             }
         }

@@ -87,5 +87,12 @@ namespace Group_2
         CF.Show();
             this.Hide();
         }
+
+        private void products_Click(object sender, EventArgs e)
+        {
+            createProduct CP = new createProduct();
+            CP.Show();
+            this.Hide();
+        }
     }
 }
