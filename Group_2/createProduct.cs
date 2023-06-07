@@ -16,6 +16,7 @@ namespace Group_2
         public createProduct()
         {
             InitializeComponent();
+            Type.DataSource = Enum.GetValues(typeof(ProductType));
         }
         //
         private void label1_Click(object sender, EventArgs e)
@@ -32,25 +33,26 @@ namespace Group_2
         {
             Product p = new Product(
                 this.productID.Text,
-                this.productName.Text,
-                decimal.Parse(this.pricePerTon.Text),
+
+                this.productID.Text,
                 this.expirationDate.Value,
-                this.Type.Text.Replace(' ', '_')
+                decimal.Parse(this.pricePerTon.Text),
+                (ProductType)Enum.Parse(typeof(ProductType), Type.Text.Replace(' ', '_')),true
+
             );
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                string material = row.Cells["getMaterials"].Value?.ToString();
-                string amount = row.Cells["Amount"].Value?.ToString();
+
+                string material = row.Cells["getMaterials"].Value.ToString();
+                string amount = row.Cells["Amount"].Value.ToString();
 
 
                 if (row.Cells["getMaterials"] is DataGridViewComboBoxCell comboBoxCell)
                 {
                     string selectedValue = comboBoxCell.Value?.ToString();
 
-
                 }
-
 
             }
         }
@@ -80,5 +82,16 @@ namespace Group_2
         {
 
         }
+
+
+        private void Back_Click(object sender, EventArgs e)
+        {
+            homepage h = new homepage();
+            h.Show();
+            this.Hide();
+        }
+
+
     }
 }
+//
