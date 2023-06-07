@@ -75,5 +75,10 @@ namespace Group_2
             expirationDate.CustomFormat = "yyyy-MM-dd";
             
         }
+
+        private void Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

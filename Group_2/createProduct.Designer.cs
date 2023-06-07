@@ -158,6 +158,7 @@
             this.Type.Name = "Type";
             this.Type.Size = new System.Drawing.Size(125, 24);
             this.Type.TabIndex = 13;
+            this.Type.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
             // 
             // label8
             // 
