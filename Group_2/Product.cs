@@ -10,6 +10,7 @@ namespace Group_2
 {
     public class Product
     {
+       
         public ProductType ProductType { get; set; }
         public string Id { get; set; }
         public string Name { get; set; }
@@ -74,3 +75,4 @@ namespace Group_2
 
     }
 }
+//
