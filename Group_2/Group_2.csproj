@@ -312,6 +312,9 @@
       <DependentUpon>viewEMP.cs</DependentUpon>
     </Compile>
     <Compile Include="Warehouse.cs" />
+    <EmbeddedResource Include="Create fault.resx">
+      <DependentUpon>Create fault.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="createProduct.resx">
       <DependentUpon>createProduct.cs</DependentUpon>
     </EmbeddedResource>

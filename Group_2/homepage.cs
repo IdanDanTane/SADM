@@ -79,5 +79,13 @@ namespace Group_2
             l.Show();
             this.Hide();
         }
+
+        private void incomeReport_Click(object sender, EventArgs e)
+        {
+            Create_fault CF = new Create_fault();
+            
+        CF.Show();
+            this.Hide();
+        }
     }
 }
