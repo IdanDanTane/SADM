@@ -11,11 +11,20 @@ namespace Group_2
         public int serialNumber;
         public DateTime time;
 
-        public Shift(int SN, DateTime time)
+        public Shift(int SN, DateTime time, bool isNew)
         {
             this.serialNumber = SN;
             this.time = time;
-            
+            if (isNew)
+            {
+                Program.Shifts.Add(this);
+            }
+
+        }
+
+        private void create_Shift()
+        {
+            throw new NotImplementedException();
         }
 
         public void createFault(int id, MachineType Mtype, FaultType Ftype, Urgency urgancy, FaultStatus Fstatus)
