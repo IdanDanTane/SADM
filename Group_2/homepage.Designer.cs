@@ -78,6 +78,7 @@
             this.products.TabIndex = 3;
             this.products.Text = "products";
             this.products.UseVisualStyleBackColor = true;
+            this.products.Click += new System.EventHandler(this.products_Click);
             // 
             // materials
             // 

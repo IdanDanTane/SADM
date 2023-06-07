@@ -45,67 +45,69 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.getMaterials = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 145);
+            this.label1.Location = new System.Drawing.Point(135, 181);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 0;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(120, 186);
+            this.label2.Location = new System.Drawing.Point(135, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(110, 161);
+            this.label3.Location = new System.Drawing.Point(124, 201);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 16);
+            this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Product ID : ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(110, 220);
+            this.label4.Location = new System.Drawing.Point(124, 275);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 16);
+            this.label4.Size = new System.Drawing.Size(116, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Product name :";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(110, 273);
+            this.label5.Location = new System.Drawing.Point(124, 341);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 16);
+            this.label5.Size = new System.Drawing.Size(123, 20);
             this.label5.TabIndex = 4;
             this.label5.Text = "Expiration date :";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 327);
+            this.label6.Location = new System.Drawing.Point(124, 409);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
+            this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 5;
             this.label6.Text = "Price per ton :";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(341, 382);
+            this.button1.Location = new System.Drawing.Point(384, 478);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 36);
+            this.button1.Size = new System.Drawing.Size(176, 45);
             this.button1.TabIndex = 6;
             this.button1.Text = "Create product";
             this.button1.UseVisualStyleBackColor = true;
@@ -113,58 +115,64 @@
             // 
             // productID
             // 
-            this.productID.Location = new System.Drawing.Point(236, 158);
+            this.productID.Location = new System.Drawing.Point(266, 198);
+            this.productID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productID.Name = "productID";
-            this.productID.Size = new System.Drawing.Size(125, 22);
+            this.productID.Size = new System.Drawing.Size(140, 26);
             this.productID.TabIndex = 7;
             // 
             // productName
             // 
-            this.productName.Location = new System.Drawing.Point(236, 214);
+            this.productName.Location = new System.Drawing.Point(266, 268);
+            this.productName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productName.Name = "productName";
-            this.productName.Size = new System.Drawing.Size(125, 22);
+            this.productName.Size = new System.Drawing.Size(140, 26);
             this.productName.TabIndex = 8;
             // 
             // pricePerTon
             // 
-            this.pricePerTon.Location = new System.Drawing.Point(236, 324);
+            this.pricePerTon.Location = new System.Drawing.Point(266, 405);
+            this.pricePerTon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pricePerTon.Name = "pricePerTon";
-            this.pricePerTon.Size = new System.Drawing.Size(125, 22);
+            this.pricePerTon.Size = new System.Drawing.Size(140, 26);
             this.pricePerTon.TabIndex = 10;
             // 
             // expirationDate
             // 
             this.expirationDate.CustomFormat = "yyyy-MM-dd";
             this.expirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.expirationDate.Location = new System.Drawing.Point(236, 267);
+            this.expirationDate.Location = new System.Drawing.Point(266, 334);
+            this.expirationDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.expirationDate.Name = "expirationDate";
-            this.expirationDate.Size = new System.Drawing.Size(125, 22);
+            this.expirationDate.Size = new System.Drawing.Size(140, 26);
             this.expirationDate.TabIndex = 11;
             this.expirationDate.ValueChanged += new System.EventHandler(this.expirationDate_ValueChanged);
             // 
             // ProductType
             // 
             this.ProductType.AutoSize = true;
-            this.ProductType.Location = new System.Drawing.Point(110, 102);
+            this.ProductType.Location = new System.Drawing.Point(124, 128);
             this.ProductType.Name = "ProductType";
-            this.ProductType.Size = new System.Drawing.Size(88, 16);
+            this.ProductType.Size = new System.Drawing.Size(106, 20);
             this.ProductType.TabIndex = 12;
             this.ProductType.Text = "Product type :";
             // 
             // Type
             // 
             this.Type.FormattingEnabled = true;
-            this.Type.Location = new System.Drawing.Point(236, 102);
+            this.Type.Location = new System.Drawing.Point(266, 128);
+            this.Type.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(125, 24);
+            this.Type.Size = new System.Drawing.Size(140, 28);
             this.Type.TabIndex = 13;
+            this.Type.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(458, 102);
+            this.label8.Location = new System.Drawing.Point(515, 128);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 16);
+            this.label8.Size = new System.Drawing.Size(85, 20);
             this.label8.TabIndex = 15;
             this.label8.Text = "Materials  :";
             // 
@@ -174,11 +182,12 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.getMaterials,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(461, 135);
+            this.dataGridView1.Location = new System.Drawing.Point(519, 169);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(291, 67);
+            this.dataGridView1.Size = new System.Drawing.Size(314, 126);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -198,11 +207,22 @@
             this.Amount.Name = "Amount";
             this.Amount.Width = 125;
             // 
+            // Back
+            // 
+            this.Back.Location = new System.Drawing.Point(128, 478);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(123, 45);
+            this.Back.TabIndex = 17;
+            this.Back.Text = "Back";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
             // createProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Type);
@@ -218,6 +238,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "createProduct";
             this.Text = "Create product";
             this.Load += new System.EventHandler(this.createProduct_Load);
@@ -246,5 +267,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewComboBoxColumn getMaterials;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Button Back;
     }
 }
