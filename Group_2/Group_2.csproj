@@ -194,6 +194,12 @@
     <Compile Include="manageMaterials.Designer.cs">
       <DependentUpon>manageMaterials.cs</DependentUpon>
     </Compile>
+    <Compile Include="manageProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manageProducts.Designer.cs">
+      <DependentUpon>manageProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material.cs" />
     <Compile Include="Mstatus.cs" />
     <Compile Include="Product.cs" />
@@ -258,6 +264,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SADM_2DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="searchProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchProduct.Designer.cs">
+      <DependentUpon>searchProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL_CON.cs" />
     <Compile Include="CreateEmployee.cs">
       <SubType>Form</SubType>
@@ -297,12 +309,21 @@
     <Compile Include="viewEMP.Designer.cs">
       <DependentUpon>viewEMP.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewProducts.Designer.cs">
+      <DependentUpon>viewProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Warehouse.cs" />
     <EmbeddedResource Include="createProduct.resx">
       <DependentUpon>createProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manageMaterials.resx">
       <DependentUpon>manageMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manageProducts.resx">
+      <DependentUpon>manageProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchCUST.resx">
       <DependentUpon>searchCUST.cs</DependentUpon>
@@ -343,6 +364,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="searchProduct.resx">
+      <DependentUpon>searchProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="viewCUST.resx">
       <DependentUpon>viewCUST.cs</DependentUpon>
     </EmbeddedResource>
@@ -351,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewEMP.resx">
       <DependentUpon>viewEMP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewProducts.resx">
+      <DependentUpon>viewProducts.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -79,5 +79,13 @@ namespace Group_2
             l.Show();
             this.Hide();
         }
+
+        private void products_Click(object sender, EventArgs e)
+        {
+            manageProducts Products = new manageProducts();
+            Products.Show();
+            this.Hide();
+
+        }
     }
 }
