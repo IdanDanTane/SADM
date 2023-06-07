@@ -140,6 +140,7 @@
             this.expirationDate.Name = "expirationDate";
             this.expirationDate.Size = new System.Drawing.Size(125, 22);
             this.expirationDate.TabIndex = 11;
+            this.expirationDate.ValueChanged += new System.EventHandler(this.expirationDate_ValueChanged);
             // 
             // ProductType
             // 
