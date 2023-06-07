@@ -36,6 +36,10 @@ namespace Group_2
             }
         }
 
+        public Product(string text1, string text2, decimal v1, DateTime value, string v2)
+        {
+        }
+
         private void createProduct()
         {
             SQL_CON sqlConn = new SQL_CON();
