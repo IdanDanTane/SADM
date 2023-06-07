@@ -80,6 +80,14 @@ namespace Group_2
             this.Hide();
         }
 
+
+        private void products_Click(object sender, EventArgs e)
+        {
+            manageProducts Products = new manageProducts();
+            Products.Show();
+            this.Hide();
+            }
+
         private void incomeReport_Click(object sender, EventArgs e)
         {
             Create_fault CF = new Create_fault();
@@ -88,11 +96,6 @@ namespace Group_2
             this.Hide();
         }
 
-        private void products_Click(object sender, EventArgs e)
-        {
-            createProduct CP = new createProduct();
-            CP.Show();
-            this.Hide();
-        }
+        
     }
 }
