@@ -10,7 +10,7 @@ namespace Group_2
 {
     public class Product
     {
-        public ProductType ProductType { get; set; }
+       // public ProductType ProductType { get; set; }
         public string Id { get; set; }
         public string Name { get; set; }
 
@@ -20,14 +20,15 @@ namespace Group_2
 
         public Dictionary<Material, decimal> componenets { get; set; }
 
-        public Product(ProductType Type, string id, string name, DateTime expDate, decimal price, bool isNew)
+        //ProductType Type
+        public Product( string id, string name, DateTime expDate, decimal price, bool isNew)
         {
             this.Id = id;
             this.Name = name;
             this.expirationDate = expDate;
             this.pricePerTon = price;
             this.GetMaterials();
-            this.ProductType = Type;
+            //this.ProductType = Type;
             if (isNew)
             {
                 this.createProduct();
@@ -42,8 +43,9 @@ namespace Group_2
         private void createProduct()
         {
             SQL_CON sqlConn = new SQL_CON();
-            SqlDataAdapter cmd = new SqlDataAdapter("EXECUTE [dbo].[AddProduct] @ProductType, @productId, @name, @expirationDate, @pricePerTone", sqlConn.getConnection());
-            cmd.SelectCommand.Parameters.AddWithValue("@ProductType", this.ProductType);
+            //@ProductType,
+            SqlDataAdapter cmd = new SqlDataAdapter("EXECUTE [dbo].[AddProduct]  @productId, @name, @expirationDate, @pricePerTone", sqlConn.getConnection());
+           // cmd.SelectCommand.Parameters.AddWithValue("@ProductType", this.ProductType);
             cmd.SelectCommand.Parameters.AddWithValue("@productId", this.Id);
             cmd.SelectCommand.Parameters.AddWithValue("@name", this.Name);
             string newDateTime = this.expirationDate.ToString("yyyy-MM-dd");

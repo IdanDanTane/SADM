@@ -63,7 +63,6 @@ namespace Group_2
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-
         }
 
         private void label7_Click(object sender, EventArgs e)

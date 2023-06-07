@@ -16,6 +16,8 @@ namespace Group_2
         public static System.Collections.Generic.List<Customer> Customers;
         public static System.Collections.Generic.List<Product> Procducts;
         public static System.Collections.Generic.List<Material> Materials;
+        public static System.Collections.Generic.List<Shift> Shifts;
+        public static System.Collections.Generic.List<Fault> Faults;
         [STAThread]
         public static void init_Employees()//מילוי המערך מתוך בסיס הנתונים
         {
@@ -48,6 +50,21 @@ namespace Group_2
                 Customers.Add(cust);
             }
         }
+        public static void init_Shifts()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewShifts";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            Shifts = new List<Shift>();
+
+            while (rdr.Read())
+            {
+                Shift s = new Shift((int)rdr.GetValue(0), (DateTime)rdr.GetValue(1), false);
+                Shifts.Add(s);
+            }
+        }
         public static void init_Materials()//מילוי המערך מתוך בסיס הנתונים
         {
             SqlCommand c = new SqlCommand();
@@ -63,6 +80,25 @@ namespace Group_2
                 Warehouse W = (Warehouse)Enum.Parse(typeof(Warehouse), rdr.GetValue(5).ToString());
                 Material m = new Material(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (decimal)rdr.GetValue(2), (decimal)rdr.GetValue(3), S,W, (DateTime)rdr.GetValue(6), (DateTime)rdr.GetValue(7), (decimal)rdr.GetValue(8), false);
                 Materials.Add(m);
+            }
+        }
+        public static void init_Faults()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewFaults";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            Faults = new List<Fault>();
+
+            while (rdr.Read())
+            { 
+                MachineType M = (MachineType)Enum.Parse(typeof(MachineType), rdr.GetValue(1).ToString());
+                FaultType f = (FaultType)Enum.Parse(typeof(FaultType), rdr.GetValue(2).ToString());
+                Urgency u = (Urgency)Enum.Parse(typeof(Urgency), rdr.GetValue(3).ToString());
+                FaultStatus fs = (FaultStatus)Enum.Parse(typeof(FaultStatus), rdr.GetValue(4).ToString());
+                Fault fa = new Fault(M, f, u, fs, false);
+                Faults.Add(fa);
             }
         }
         public static void init_Products()//מילוי המערך מתוך בסיס הנתונים
@@ -119,6 +155,8 @@ namespace Group_2
             init_Customers();
             init_Materials();
             init_Products();
+            init_Shifts();
+            init_Faults();
             Application.Run(new Login());
         }
     }
