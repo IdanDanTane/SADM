@@ -78,6 +78,7 @@
             this.products.TabIndex = 3;
             this.products.Text = "products";
             this.products.UseVisualStyleBackColor = true;
+            this.products.Click += new System.EventHandler(this.products_Click);
             // 
             // materials
             // 
@@ -104,8 +105,9 @@
             this.incomeReport.Name = "incomeReport";
             this.incomeReport.Size = new System.Drawing.Size(132, 51);
             this.incomeReport.TabIndex = 6;
-            this.incomeReport.Text = "Create income report";
+            this.incomeReport.Text = "Create Fault";
             this.incomeReport.UseVisualStyleBackColor = true;
+            this.incomeReport.Click += new System.EventHandler(this.incomeReport_Click);
             // 
             // productionForm
             // 
