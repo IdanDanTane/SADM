@@ -32,6 +32,7 @@ namespace Group_2
             if (isNew)
             {
                 this.createProduct();
+                
                 Program.Procducts.Add(this);
             }
         }
@@ -42,7 +43,7 @@ namespace Group_2
             SQL_CON sqlConn = new SQL_CON();
             
             SqlDataAdapter cmd = new SqlDataAdapter("EXECUTE [dbo].[AddProduct] @productId, @name, @expirationDate, @pricePerTone, @Type", sqlConn.getConnection());
-            cmd.SelectCommand.Parameters.AddWithValue("@Type", this.ProductType);
+            cmd.SelectCommand.Parameters.AddWithValue("@Type", this.ProductType.ToString());
             cmd.SelectCommand.Parameters.AddWithValue("@productId", this.Id);
             cmd.SelectCommand.Parameters.AddWithValue("@name", this.Name);
             string newDateTime = this.expirationDate.ToString("yyyy-MM-dd");
