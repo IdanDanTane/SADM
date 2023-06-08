@@ -98,10 +98,10 @@ namespace Group_2
         private void update_Product_Click(object sender, EventArgs e)
         {
             SQL_CON SC = new SQL_CON();
-            SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[UpdateProductl] @productId, @name, @expirationDate,  @ProductType, @pricePerTone", SC.getConnection());
+            SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[UpdateProduct] @productId, @name, @expirationDate,  @pricePerTone,@type", SC.getConnection());
             r.SelectCommand.Parameters.AddWithValue("@productID", temp.Id);
             r.SelectCommand.Parameters.AddWithValue("@name", this.productName.Text);
-            r.SelectCommand.Parameters.AddWithValue("@ProductType", this.Type.Text);
+            r.SelectCommand.Parameters.AddWithValue("@type", this.Type.Text);
              string newDateTime = this.expirationDate.Value.ToString("yyyy-MM-dd");       
             r.SelectCommand.Parameters.AddWithValue("@expirationDate", newDateTime);
             r.SelectCommand.Parameters.AddWithValue("@pricePerTone", this.pricePerTon.Text);        
