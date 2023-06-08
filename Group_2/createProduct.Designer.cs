@@ -42,10 +42,11 @@
             this.ProductType = new System.Windows.Forms.Label();
             this.Type = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.getMaterials = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Back = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.needed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Material_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,6 +129,7 @@
             this.productName.Name = "productName";
             this.productName.Size = new System.Drawing.Size(140, 26);
             this.productName.TabIndex = 8;
+            this.productName.TextChanged += new System.EventHandler(this.productName_TextChanged);
             // 
             // pricePerTon
             // 
@@ -176,39 +178,6 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Materials  :";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.getMaterials,
-            this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(519, 169);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-
-            this.dataGridView1.Size = new System.Drawing.Size(314, 126);
-
-            this.dataGridView1.TabIndex = 16;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // getMaterials
-            // 
-            this.getMaterials.HeaderText = "Material";
-            this.getMaterials.MinimumWidth = 6;
-            this.getMaterials.Name = "getMaterials";
-            this.getMaterials.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.getMaterials.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.getMaterials.Width = 125;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 6;
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 125;
-            // 
             // Back
             // 
             this.Back.Location = new System.Drawing.Point(128, 478);
@@ -219,15 +188,50 @@
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.needed,
+            this.Material_ID,
+            this.Amount});
+            this.dataGridView1.Location = new System.Drawing.Point(606, 128);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(282, 256);
+            this.dataGridView1.TabIndex = 18;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
+            // 
+            // needed
+            // 
+            this.needed.HeaderText = "needed";
+            this.needed.MinimumWidth = 8;
+            this.needed.Name = "needed";
+            this.needed.Width = 150;
+            // 
+            // Material_ID
+            // 
+            this.Material_ID.HeaderText = "Material ID";
+            this.Material_ID.MinimumWidth = 8;
+            this.Material_ID.Name = "Material_ID";
+            this.Material_ID.ReadOnly = true;
+            this.Material_ID.Width = 150;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.MinimumWidth = 8;
+            this.Amount.Name = "Amount";
+            this.Amount.Width = 150;
+            // 
             // createProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
-
-            this.Controls.Add(this.Back);
-
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Back);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Type);
             this.Controls.Add(this.ProductType);
@@ -268,9 +272,10 @@
         private System.Windows.Forms.Label ProductType;
         private System.Windows.Forms.ComboBox Type;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn getMaterials;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn needed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Material_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
     }
 }
