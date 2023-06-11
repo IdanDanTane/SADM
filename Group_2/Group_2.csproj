@@ -183,6 +183,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ShiftReport.cs" />
     <Compile Include="Create fault.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +200,12 @@
     <Compile Include="Fault.cs" />
     <Compile Include="FaultStatus.cs" />
     <Compile Include="FaultType.cs" />
+    <Compile Include="CreateShiftReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateShiftReport.Designer.cs">
+      <DependentUpon>CreateShiftReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="MachineType.cs" />
     <Compile Include="manageMaterials.cs">
       <SubType>Form</SubType>
@@ -276,16 +283,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SADM_2DataSet2.xsd</DependentUpon>
     </Compile>
-
     <Compile Include="searchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="searchProduct.Designer.cs">
       <DependentUpon>searchProduct.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Shift.cs" />
-
     <Compile Include="SQL_CON.cs" />
     <Compile Include="CreateEmployee.cs">
       <SubType>Form</SubType>
@@ -338,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="createProduct.resx">
       <DependentUpon>createProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateShiftReport.resx">
+      <DependentUpon>CreateShiftReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="manageMaterials.resx">
       <DependentUpon>manageMaterials.cs</DependentUpon>

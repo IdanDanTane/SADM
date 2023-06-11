@@ -58,15 +58,16 @@ namespace Group_2
 
                             SQL_CON sqlConn = new SQL_CON();
                             SqlDataAdapter cmd = new SqlDataAdapter("EXECUTE [dbo].[AddProductMaterial]  @productID, @MaterialID, @quantity", sqlConn.getConnection());
-                            cmd.SelectCommand.Parameters.AddWithValue("@productID", p.Name);
+                            cmd.SelectCommand.Parameters.AddWithValue("@productID", p.Id);
                             cmd.SelectCommand.Parameters.AddWithValue("@MaterialID", dataGridView1.Rows[i].Cells[1].Value.ToString());
                             cmd.SelectCommand.Parameters.Add(quanti);
                             sqlConn.Execute_non_query(cmd);
                         }
                     }
-                    p.GetMaterials();
+                   
                 }
             }
+            p.GetMaterials();
             }
             
             /*
