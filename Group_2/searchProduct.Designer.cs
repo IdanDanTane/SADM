@@ -45,9 +45,10 @@
             this.deleteProduct = new System.Windows.Forms.Button();
             this.update_Product = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.getMaterials = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
+            this.needed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.MaterialID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,31 +206,17 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.getMaterials,
+            this.needed,
+            this.MaterialID,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(461, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(461, 111);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(327, 84);
+            this.dataGridView1.Size = new System.Drawing.Size(327, 213);
             this.dataGridView1.TabIndex = 31;
-            // 
-            // getMaterials
-            // 
-            this.getMaterials.HeaderText = "Material";
-            this.getMaterials.MinimumWidth = 6;
-            this.getMaterials.Name = "getMaterials";
-            this.getMaterials.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.getMaterials.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.getMaterials.Width = 125;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.MinimumWidth = 6;
-            this.Amount.Name = "Amount";
-            this.Amount.Width = 125;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label8
             // 
@@ -239,6 +226,30 @@
             this.label8.Size = new System.Drawing.Size(85, 20);
             this.label8.TabIndex = 30;
             this.label8.Text = "Materials  :";
+            // 
+            // needed
+            // 
+            this.needed.HeaderText = "needed";
+            this.needed.MinimumWidth = 8;
+            this.needed.Name = "needed";
+            this.needed.ReadOnly = true;
+            this.needed.Width = 150;
+            // 
+            // MaterialID
+            // 
+            this.MaterialID.HeaderText = "Material ID";
+            this.MaterialID.MinimumWidth = 8;
+            this.MaterialID.Name = "MaterialID";
+            this.MaterialID.ReadOnly = true;
+            this.MaterialID.Width = 150;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.MinimumWidth = 8;
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            this.Amount.Width = 150;
             // 
             // searchProduct
             // 
@@ -265,6 +276,7 @@
             this.Controls.Add(this.label1);
             this.Name = "searchProduct";
             this.Text = "searchProduct";
+            this.Load += new System.EventHandler(this.searchProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -290,8 +302,9 @@
         private System.Windows.Forms.Button deleteProduct;
         private System.Windows.Forms.Button update_Product;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn getMaterials;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn needed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
     }
 }

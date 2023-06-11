@@ -22,14 +22,13 @@ namespace Group_2
 
         }
 
-        private void create_Shift()
+        public void createFault( MachineType Mtype, FaultType Ftype, Urgency urgancy, FaultStatus Fstatus)
         {
-            throw new NotImplementedException();
+            Fault f = new Fault(Mtype, Ftype, urgancy, Fstatus, true);
         }
-
-        public void createFault(int id, MachineType Mtype, FaultType Ftype, Urgency urgancy, FaultStatus Fstatus)
+        public void createReport(string shiftID)
         {
-
+            ShiftReport sr = new ShiftReport(shiftID, true);
         }
     }
     
