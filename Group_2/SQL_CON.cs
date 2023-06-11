@@ -55,10 +55,10 @@ namespace Group_2
             }
             catch (Exception ex)
             {
-                MessageBox.Show("שגיאה בביצוע השאילתה", "המשך", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message, "המשך", MessageBoxButtons.OK);
                 return null;
             }
-
+            //"שגיאה בביצוע השאילתה"
 
         }
 
