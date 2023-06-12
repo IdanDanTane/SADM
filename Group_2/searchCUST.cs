@@ -78,7 +78,7 @@ namespace Group_2
             SqlDataAdapter r = new SqlDataAdapter("EXECUTE dbo.deleteCustomer  @Email", SC.getConnection());
             r.SelectCommand.Parameters.AddWithValue("@Email", temp.Email);
             SC.Execute_non_query(r);
-            Program.Customers.Remove(temp);
+            temp.inArchive = true;
         }
 
         private void button3_Click(object sender, EventArgs e)
