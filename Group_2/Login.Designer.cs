@@ -120,6 +120,7 @@
             this.EmailErr.Size = new System.Drawing.Size(273, 20);
             this.EmailErr.TabIndex = 7;
             this.EmailErr.Text = "Email does not match to employee ID";
+            this.EmailErr.Click += new System.EventHandler(this.EmailErr_Click);
             // 
             // Login
             // 
