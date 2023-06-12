@@ -91,5 +91,10 @@ namespace Group_2
         {
 
         }
+
+        private void EmailErr_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

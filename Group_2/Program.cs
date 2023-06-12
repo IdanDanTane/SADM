@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -248,6 +249,22 @@ namespace Group_2
             return null;
         }
 
+        //verify fields
+        public static bool IsValidEmail(string email) // Check email format
+        {
+             Regex format = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,5}$");
+            return format.IsMatch(email);
+        }
+         public static bool IsValidPhone(string phone) // Check phone format
+         {
+             string format =@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$";
+             return Regex.IsMatch(phone, format);
+         }
+         public static bool IsValidZipCode(string zipCode) // Check zip Code format
+         {
+             string format = @"^\d{5}(\d{1})?$";
+             return Regex.IsMatch(zipCode, format);
+       }
 
         static void Main()
         {
