@@ -141,7 +141,7 @@ namespace Group_2
             SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[Delete_Employee_And_RemoveToArchive] @employeeId", SC.getConnection());
             r.SelectCommand.Parameters.AddWithValue("@employeeId", temp.employeeID);
             SC.Execute_non_query(r);
-            Program.Employees.Remove(temp);
+            temp.inArchive = true;
 
         }
 

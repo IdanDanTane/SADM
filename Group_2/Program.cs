@@ -47,7 +47,16 @@ namespace Group_2
 
             while (rdr.Read())
             {
-                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), false);
+                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), false,false);
+                Customers.Add(cust);
+            }
+             c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.view_CustomerArchive";
+             SC = new SQL_CON();
+            rdr = SC.Execute_query(c);
+            while (rdr.Read())
+            {
+                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(),true ,false);
                 Customers.Add(cust);
             }
         }
