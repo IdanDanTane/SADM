@@ -195,7 +195,7 @@
             this.needed,
             this.Material_ID,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(606, 128);
+            this.dataGridView1.Location = new System.Drawing.Point(586, 128);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;

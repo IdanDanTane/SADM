@@ -41,18 +41,35 @@ namespace Group_2
                 deleteProduct.Enabled = true;
                 update_Product.Enabled = true;
                 this.temp = Program.seekProduct(productID.Text.ToString());
-                productID.Enabled = false;             
+                productID.Enabled = false;
                 this.productName.AppendText(temp.Name);
                 this.expirationDate.Value = temp.expirationDate;
                 this.pricePerTon.AppendText(temp.pricePerTon.ToString());
                 this.Type.SelectedItem = temp.ProductType;
 
 
-                this.productName.Enabled = true;              
+                this.productName.Enabled = true;
                 this.expirationDate.Enabled = true;
-                this.pricePerTon.Enabled = true;             
+                this.pricePerTon.Enabled = true;
                 this.Type.Enabled = true;
-             
+
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value != null)
+                    {
+                        if (temp.componenets.ContainsKey(Program.seekMaterial(dataGridView1.Rows[i].Cells[1].Value.ToString())))
+                        {
+                            dataGridView1.Rows[i].Cells[0].Value = true;
+                            decimal Dvalue;
+                            temp.componenets.TryGetValue((Program.seekMaterial(dataGridView1.Rows[i].Cells[1].Value.ToString())), out Dvalue);
+                            dataGridView1.Rows[i].Cells[2].Value = Dvalue;
+                            {
+
+                            }
+                        }
+                    }
+                }
             }
 
         }
@@ -91,7 +108,7 @@ namespace Group_2
             SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[MoveProductToArchive] @productID", SC.getConnection());
             r.SelectCommand.Parameters.AddWithValue("@productID", temp.Id);
             SC.Execute_non_query(r);
-            Program.Procducts.Remove(temp);
+            temp.inArchive=true;
 
         }
 
@@ -110,6 +127,19 @@ namespace Group_2
             temp.ProductType = (ProductType)Enum.Parse(typeof(ProductType), this.Type.Text.Replace(' ', '_'));
             temp.Name = this.productName.Text;
             temp.expirationDate = this.expirationDate.Value;   
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void searchProduct_Load(object sender, EventArgs e)
+        {
+            foreach (Material m in Program.Materials)
+            {
+                dataGridView1.Rows.Add(false, m.Id, 0);
+            }
         }
     }
 }
