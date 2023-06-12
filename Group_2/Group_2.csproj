@@ -183,12 +183,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="Forecast.cs" />
+
     <Compile Include="ProductionFormForShift.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductionFormForShift.Designer.cs">
       <DependentUpon>ProductionFormForShift.cs</DependentUpon>
     </Compile>
+
     <Compile Include="ProductionForm.cs">
       <SubType>Form</SubType>
     </Compile>
