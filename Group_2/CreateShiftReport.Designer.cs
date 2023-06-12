@@ -43,34 +43,37 @@
             // shiD
             // 
             this.shiD.AutoSize = true;
-            this.shiD.Location = new System.Drawing.Point(56, 62);
+            this.shiD.Location = new System.Drawing.Point(50, 50);
             this.shiD.Name = "shiD";
-            this.shiD.Size = new System.Drawing.Size(63, 20);
+            this.shiD.Size = new System.Drawing.Size(48, 16);
             this.shiD.TabIndex = 0;
             this.shiD.Text = "Shift ID";
             this.shiD.Click += new System.EventHandler(this.proid_Click);
             // 
             // ShiftID
             // 
-            this.ShiftID.Location = new System.Drawing.Point(140, 59);
+            this.ShiftID.Location = new System.Drawing.Point(124, 47);
+            this.ShiftID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShiftID.Name = "ShiftID";
-            this.ShiftID.Size = new System.Drawing.Size(104, 26);
+            this.ShiftID.Size = new System.Drawing.Size(93, 22);
             this.ShiftID.TabIndex = 1;
+            this.ShiftID.TextChanged += new System.EventHandler(this.ShiftID_TextChanged);
             // 
             // proid
             // 
             this.proid.AutoSize = true;
-            this.proid.Location = new System.Drawing.Point(127, 138);
+            this.proid.Location = new System.Drawing.Point(113, 110);
             this.proid.Name = "proid";
-            this.proid.Size = new System.Drawing.Size(0, 20);
+            this.proid.Size = new System.Drawing.Size(0, 16);
             this.proid.TabIndex = 2;
             this.proid.Click += new System.EventHandler(this.proid_Click_1);
             // 
             // crepo
             // 
-            this.crepo.Location = new System.Drawing.Point(486, 364);
+            this.crepo.Location = new System.Drawing.Point(432, 291);
+            this.crepo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.crepo.Name = "crepo";
-            this.crepo.Size = new System.Drawing.Size(140, 48);
+            this.crepo.Size = new System.Drawing.Size(124, 38);
             this.crepo.TabIndex = 7;
             this.crepo.Text = "Create Report";
             this.crepo.UseVisualStyleBackColor = true;
@@ -78,9 +81,10 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(156, 364);
+            this.backButton.Location = new System.Drawing.Point(139, 291);
+            this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(140, 48);
+            this.backButton.Size = new System.Drawing.Size(124, 38);
             this.backButton.TabIndex = 8;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
@@ -93,11 +97,12 @@
             this.produced,
             this.productID,
             this.Quantity});
-            this.dataGridView1.Location = new System.Drawing.Point(390, 89);
+            this.dataGridView1.Location = new System.Drawing.Point(347, 71);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(313, 183);
+            this.dataGridView1.Size = new System.Drawing.Size(278, 146);
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -129,15 +134,16 @@
             // 
             // CreateShiftReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 463);
+            this.ClientSize = new System.Drawing.Size(750, 370);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.crepo);
             this.Controls.Add(this.proid);
             this.Controls.Add(this.ShiftID);
             this.Controls.Add(this.shiD);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CreateShiftReport";
             this.Text = "CreateShiftReport";
             this.Load += new System.EventHandler(this.CreateShiftReport_Load);

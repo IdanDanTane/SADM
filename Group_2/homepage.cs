@@ -96,6 +96,33 @@ namespace Group_2
             this.Hide();
         }
 
-        
+        private void EndshiftReport_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void updateStock_Click(object sender, EventArgs e)
+
+        {
+            if (GetLoggedUserType().Equals("Shift_manager"))
+            {
+                updateStock_ShiftManager updateStockForm = new updateStock_ShiftManager();
+                updateStockForm.Show();
+                this.Hide();
+            }
+            if (GetLoggedUserType().Equals("Stock_keeper"))
+            {
+                updateStock_StockKeeper updatestockForm = new updateStock_StockKeeper();
+                updatestockForm.Show();
+                this.Hide();
+            }
+            if (GetLoggedUserType().Equals("CEO"))
+            {
+                updateStock_CEO updateStockForm = new updateStock_CEO();
+                updateStockForm.Show();
+                this.Hide();
+
+            }
+        }
     }
 }
