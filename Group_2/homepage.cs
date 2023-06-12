@@ -102,6 +102,24 @@ namespace Group_2
             this.Hide();
         }
 
-        
+
+        private void homepage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productionForm_Click(object sender, EventArgs e)
+        {
+            ProductionForm pr = new ProductionForm();
+            pr.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProductionFormForShift pr = new ProductionFormForShift();
+            pr.Show();
+            this.Hide();
+        }
     }
 }
