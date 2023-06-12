@@ -44,6 +44,8 @@
             this.EmployeeType_choose = new System.Windows.Forms.ComboBox();
             this.employeeBirthDate = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
+            this.invalidEmail = new System.Windows.Forms.Label();
+            this.invalidPhone = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // create_Employee
@@ -189,11 +191,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // invalidEmail
+            // 
+            this.invalidEmail.AutoSize = true;
+            this.invalidEmail.ForeColor = System.Drawing.Color.Red;
+            this.invalidEmail.Location = new System.Drawing.Point(465, 123);
+            this.invalidEmail.Name = "invalidEmail";
+            this.invalidEmail.Size = new System.Drawing.Size(323, 20);
+            this.invalidEmail.TabIndex = 17;
+            this.invalidEmail.Text = "Email format: \" ***@***.com / org / co.il / gov \"";
+            this.invalidEmail.Click += new System.EventHandler(this.invalidEmail_Click);
+            // 
+            // invalidPhone
+            // 
+            this.invalidPhone.AutoSize = true;
+            this.invalidPhone.ForeColor = System.Drawing.Color.Red;
+            this.invalidPhone.Location = new System.Drawing.Point(479, 84);
+            this.invalidPhone.Name = "invalidPhone";
+            this.invalidPhone.Size = new System.Drawing.Size(270, 20);
+            this.invalidPhone.TabIndex = 18;
+            this.invalidPhone.Text = "phone number must contain 10 digits";
+            this.invalidPhone.Click += new System.EventHandler(this.invalidPhone_Click);
+            // 
+            // CreateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invalidPhone);
+            this.Controls.Add(this.invalidEmail);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.employeeBirthDate);
             this.Controls.Add(this.EmployeeType_choose);
@@ -210,7 +236,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.create_Employee);
-            this.Name = "Form1";
+            this.Name = "CreateEmployee";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -236,5 +262,7 @@
         private System.Windows.Forms.ComboBox EmployeeType_choose;
         private System.Windows.Forms.DateTimePicker employeeBirthDate;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label invalidEmail;
+        private System.Windows.Forms.Label invalidPhone;
     }
 }

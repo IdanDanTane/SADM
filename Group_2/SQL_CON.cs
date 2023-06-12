@@ -15,7 +15,7 @@ namespace Group_2
 
         public SQL_CON()
         {
-            conn = new SqlConnection("Data Source = dbcourse.database.windows.net; Initial Catalog = SADM_2; Persist Security Info = True; User ID = idandan@bgufbm.onmicrosoft.com; Password = fqv25217; Authentication = Active Directory Password");//update this!!
+            conn = new SqlConnection("Data Source = dbcourse.database.windows.net; Initial Catalog = SADM_2; Persist Security Info = True; User ID = neriyac@bgufbm.onmicrosoft.com; Password = fqv88154; Authentication = Active Directory Password");//update this!!
         }
         public SqlConnection getConnection()
         {
