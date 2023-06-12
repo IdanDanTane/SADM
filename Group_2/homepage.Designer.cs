@@ -120,17 +120,22 @@
             this.productionForm.Location = new System.Drawing.Point(716, 185);
             this.productionForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productionForm.Name = "productionForm";
-            this.productionForm.Size = new System.Drawing.Size(117, 41);
+
+            this.productionForm.Size = new System.Drawing.Size(157, 77);
+
             this.productionForm.TabIndex = 7;
             this.productionForm.Text = "Create prudoction form";
             this.productionForm.UseVisualStyleBackColor = true;
+            this.productionForm.Click += new System.EventHandler(this.productionForm_Click);
             // 
             // EndshiftReport
             // 
             this.EndshiftReport.Location = new System.Drawing.Point(474, 185);
             this.EndshiftReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EndshiftReport.Name = "EndshiftReport";
-            this.EndshiftReport.Size = new System.Drawing.Size(117, 41);
+
+            this.EndshiftReport.Size = new System.Drawing.Size(153, 77);
+
             this.EndshiftReport.TabIndex = 8;
             this.EndshiftReport.Text = "Create end shift report";
             this.EndshiftReport.UseVisualStyleBackColor = true;
