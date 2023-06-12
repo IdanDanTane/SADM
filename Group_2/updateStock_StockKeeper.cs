@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Group_2
 {
     public partial class updateStock_StockKeeper : Form
     {
+        private SQL_CON sqlConn;
+
         public updateStock_StockKeeper()
         {
             InitializeComponent();
+            sqlConn = new SQL_CON();
         }
 
         private void updateStock_StockKeeper_Load(object sender, EventArgs e)
@@ -16,6 +20,7 @@ namespace Group_2
             foreach (Material material in Program.Materials)
             {
                 dataGridView1.Rows.Add(material.Id, material.amount);
+                comboBox1.DataSource = Program.Materials;
             }
         }
 
@@ -31,17 +36,29 @@ namespace Group_2
             Material selectedMaterial = comboBox1.SelectedItem as Material;
             if (selectedMaterial == null)
             {
-                // Show an error message or handle the case where no material is selected
                 return;
             }
 
             if (!decimal.TryParse(textBox1.Text, out decimal amountToAdd))
             {
-                // Show an error message or handle the case where an invalid amount is entered
                 return;
             }
 
+            SQL_CON sqlConn = new SQL_CON();
+            SqlDataAdapter cmd = new SqlDataAdapter("EXECUTE [dbo].[AddToMaterialAmount] @ID, @amountToAdd", sqlConn.getConnection());
+            
+                cmd.SelectCommand.Parameters.AddWithValue("@ID", selectedMaterial.Id);
+                cmd.SelectCommand.Parameters.AddWithValue("@amountToAdd", amountToAdd);
+
+                sqlConn.Execute_non_query(cmd);
+            
+
             selectedMaterial.amount += amountToAdd;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

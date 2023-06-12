@@ -41,6 +41,8 @@
             this.Back = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.invalid_Zip = new System.Windows.Forms.Label();
+            this.invalidPhone = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -111,6 +113,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 26);
             this.textBox3.TabIndex = 7;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // textBox4
             // 
@@ -118,6 +121,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 26);
             this.textBox4.TabIndex = 8;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // button1
             // 
@@ -159,11 +163,35 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // invalid_Zip
+            // 
+            this.invalid_Zip.AutoSize = true;
+            this.invalid_Zip.ForeColor = System.Drawing.Color.Red;
+            this.invalid_Zip.Location = new System.Drawing.Point(486, 249);
+            this.invalid_Zip.Name = "invalid_Zip";
+            this.invalid_Zip.Size = new System.Drawing.Size(253, 20);
+            this.invalid_Zip.TabIndex = 16;
+            this.invalid_Zip.Text = "Zip Code must contain 5 or 6 digits";
+            this.invalid_Zip.Click += new System.EventHandler(this.invalid_Zip_Click);
+            // 
+            // invalidPhone
+            // 
+            this.invalidPhone.AutoSize = true;
+            this.invalidPhone.ForeColor = System.Drawing.Color.Red;
+            this.invalidPhone.Location = new System.Drawing.Point(486, 307);
+            this.invalidPhone.Name = "invalidPhone";
+            this.invalidPhone.Size = new System.Drawing.Size(270, 20);
+            this.invalidPhone.TabIndex = 17;
+            this.invalidPhone.Text = "phone number must contain 10 digits";
+            this.invalidPhone.Click += new System.EventHandler(this.invalidPhone_Click);
+            // 
             // searchCUST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invalidPhone);
+            this.Controls.Add(this.invalid_Zip);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Back);
@@ -199,5 +227,7 @@
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label invalid_Zip;
+        private System.Windows.Forms.Label invalidPhone;
     }
 }
