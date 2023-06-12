@@ -13,13 +13,15 @@ namespace Group_2
         public string companyName;
         public string zipCode;
         public string phoneNumber;
+        public bool inArchive;
         
-        public Customer(string Email, string companyName, string zipCode, string phoneNumber, bool isNew)
+        public Customer(string Email, string companyName, string zipCode, string phoneNumber, bool inArchive, bool isNew)
         {
             this.Email = Email;
             this.companyName = companyName;
             this.zipCode = zipCode;
             this.phoneNumber = phoneNumber;
+            this.inArchive = inArchive;
         if (isNew)
             this.add_Customer();
             Program.Customers.Add(this);

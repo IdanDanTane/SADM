@@ -95,13 +95,13 @@ namespace Group_2
         CF.Show();
             this.Hide();
         }
-
-        private void EndshiftReport_Click(object sender, EventArgs e)
+         private void EndshiftReport_Click(object sender, EventArgs e)
         {
             CreateShiftReport SR = new CreateShiftReport();
            SR.Show();
             this.Hide();
         }
+
 
         private void homepage_Load(object sender, EventArgs e)
         {
@@ -114,5 +114,6 @@ namespace Group_2
             pr.Show();
             this.Hide();
         }
+
     }
 }

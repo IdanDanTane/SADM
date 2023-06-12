@@ -33,7 +33,17 @@ namespace Group_2
             while (rdr.Read())
             {
                 employeeType T = (employeeType)Enum.Parse(typeof(employeeType), rdr.GetValue(6).ToString());
-                Employee e = new Employee(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), rdr.GetValue(4).ToString(), (DateTime)rdr.GetValue(5), T, false);
+                Employee e = new Employee(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), rdr.GetValue(4).ToString(), (DateTime)rdr.GetValue(5), T, false ,false);
+                Employees.Add(e);
+            }
+            c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.Get_employeeArchive";
+             SC = new SQL_CON();
+            rdr = SC.Execute_query(c);
+            while (rdr.Read())
+            {
+                employeeType T = (employeeType)Enum.Parse(typeof(employeeType), rdr.GetValue(6).ToString());
+                Employee e = new Employee(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), rdr.GetValue(4).ToString(), (DateTime)rdr.GetValue(5), T, true, false);
                 Employees.Add(e);
             }
         }
@@ -48,7 +58,16 @@ namespace Group_2
 
             while (rdr.Read())
             {
-                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), false);
+                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), false,false);
+                Customers.Add(cust);
+            }
+             c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.view_CustomerArchive";
+             SC = new SQL_CON();
+            rdr = SC.Execute_query(c);
+            while (rdr.Read())
+            {
+                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(),true ,false);
                 Customers.Add(cust);
             }
         }
@@ -80,7 +99,21 @@ namespace Group_2
             {
                 Mstatus S = (Mstatus)Enum.Parse(typeof(Mstatus), rdr.GetValue(4).ToString());
                 Warehouse W = (Warehouse)Enum.Parse(typeof(Warehouse), rdr.GetValue(5).ToString());
-                Material m = new Material(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (decimal)rdr.GetValue(2), (decimal)rdr.GetValue(3), S, W, (DateTime)rdr.GetValue(6), (DateTime)rdr.GetValue(7), (decimal)rdr.GetValue(8), false);
+                Material m = new Material(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (decimal)rdr.GetValue(2), (decimal)rdr.GetValue(3), S, W, (DateTime)rdr.GetValue(6), (DateTime)rdr.GetValue(7), (decimal)rdr.GetValue(8),false ,false);
+                Materials.Add(m);
+            }
+             c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.Get_MaterialArchive";
+             SC = new SQL_CON();
+             rdr = SC.Execute_query(c);
+
+           
+
+            while (rdr.Read())
+            {
+                Mstatus S = (Mstatus)Enum.Parse(typeof(Mstatus), rdr.GetValue(4).ToString());
+                Warehouse W = (Warehouse)Enum.Parse(typeof(Warehouse), rdr.GetValue(5).ToString());
+                Material m = new Material(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (decimal)rdr.GetValue(2), (decimal)rdr.GetValue(3), S, W, (DateTime)rdr.GetValue(6), (DateTime)rdr.GetValue(7), (decimal)rdr.GetValue(8), true, false);
                 Materials.Add(m);
             }
         }
@@ -116,7 +149,21 @@ namespace Group_2
             {
 
                 ProductType T = (ProductType)Enum.Parse(typeof(ProductType), rdr.GetValue(4).ToString());
-                Product p = new Product(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (DateTime)rdr.GetValue(2),(decimal) rdr.GetValue(3),T ,false);
+                Product p = new Product(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (DateTime)rdr.GetValue(2),(decimal) rdr.GetValue(3),T ,false,false);
+                Procducts.Add(p);
+            }
+             c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.Get_ProductArchive";
+             SC = new SQL_CON();
+             rdr = SC.Execute_query(c);
+
+
+
+            while (rdr.Read())
+            {
+
+                ProductType T = (ProductType)Enum.Parse(typeof(ProductType), rdr.GetValue(4).ToString());
+                Product p = new Product(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), (DateTime)rdr.GetValue(2), (decimal)rdr.GetValue(3), T, true, false);
                 Procducts.Add(p);
             }
         }

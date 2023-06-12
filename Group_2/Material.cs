@@ -28,7 +28,9 @@ namespace Group_2
 
         public decimal amount { get; set; }
 
-        public Material(string id,string name, decimal price,decimal threshold, Mstatus status, Warehouse loc, DateTime recived,DateTime exp, decimal amount, bool isNew)
+        public bool inArchive;
+
+        public Material(string id,string name, decimal price,decimal threshold, Mstatus status, Warehouse loc, DateTime recived,DateTime exp, decimal amount, bool inArchive, bool isNew)
         {
             this.Id = id;
             this.Name = name;
@@ -39,6 +41,7 @@ namespace Group_2
             this.recivedDate = recived;
             this.expirationDate = exp;
             this.amount = amount;
+            this.inArchive = inArchive;
             if(isNew)
             {
                 this.createMaterial();
