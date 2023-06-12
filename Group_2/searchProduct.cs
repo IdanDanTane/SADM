@@ -108,7 +108,7 @@ namespace Group_2
             SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[MoveProductToArchive] @productID", SC.getConnection());
             r.SelectCommand.Parameters.AddWithValue("@productID", temp.Id);
             SC.Execute_non_query(r);
-            Program.Procducts.Remove(temp);
+            temp.inArchive=true;
 
         }
 
