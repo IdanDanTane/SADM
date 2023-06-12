@@ -1,6 +1,6 @@
 ﻿namespace Group_2
 {
-    partial class ProductionForm
+    partial class ProductionFormForShift
     {
         /// <summary>
         /// Required designer variable.
@@ -39,12 +39,18 @@
             this.trDate = new System.Windows.Forms.DateTimePicker();
             this.pr = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Required = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Back = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.create = new System.Windows.Forms.Button();
-            this.Back = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // ID
@@ -136,23 +142,78 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Required,
             this.Product,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(374, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(374, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(404, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(404, 198);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // Required
+            // Back
             // 
-            this.Required.HeaderText = "Required";
-            this.Required.MinimumWidth = 8;
-            this.Required.Name = "Required";
-            this.Required.Width = 150;
+            this.Back.Location = new System.Drawing.Point(42, 414);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(104, 61);
+            this.Back.TabIndex = 12;
+            this.Back.Text = "Back";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dataGridView2.Location = new System.Drawing.Point(374, 277);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(404, 198);
+            this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(381, 243);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(218, 20);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Materials Needed for product:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(370, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(145, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Products Included :";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(213, 414);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 61);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "search";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(605, 240);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 28);
+            this.comboBox1.TabIndex = 17;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Product
             // 
@@ -168,33 +229,31 @@
             this.Amount.Name = "Amount";
             this.Amount.Width = 150;
             // 
-            // create
+            // dataGridViewTextBoxColumn1
             // 
-            this.create.Location = new System.Drawing.Point(216, 377);
-            this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(104, 61);
-            this.create.TabIndex = 11;
-            this.create.Text = "Create Form";
-            this.create.UseVisualStyleBackColor = true;
-            this.create.Click += new System.EventHandler(this.create_Click);
+            this.dataGridViewTextBoxColumn1.HeaderText = "Material ID";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 150;
             // 
-            // Back
+            // dataGridViewTextBoxColumn2
             // 
-            this.Back.Location = new System.Drawing.Point(44, 377);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(104, 61);
-            this.Back.TabIndex = 12;
-            this.Back.Text = "Back";
-            this.Back.UseVisualStyleBackColor = true;
-            this.Back.Click += new System.EventHandler(this.Back_Click);
+            this.dataGridViewTextBoxColumn2.HeaderText = "Amount";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 150;
             // 
-            // ProductionForm
+            // ProductionFormForShift
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(935, 501);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.Back);
-            this.Controls.Add(this.create);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pr);
             this.Controls.Add(this.trDate);
@@ -206,10 +265,11 @@
             this.Controls.Add(this.targetDate);
             this.Controls.Add(this.createDate);
             this.Controls.Add(this.ID);
-            this.Name = "ProductionForm";
+            this.Name = "ProductionFormForShift";
             this.Text = "ProductionForm";
             this.Load += new System.EventHandler(this.ProductionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,10 +288,15 @@
         private System.Windows.Forms.DateTimePicker trDate;
         private System.Windows.Forms.TextBox pr;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button create;
         private System.Windows.Forms.Button Back;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Required;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
     }
 }

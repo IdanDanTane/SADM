@@ -44,9 +44,9 @@ namespace Group_2
             SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[AddProduction] @ID, @createDate, @targetDate, @price, @orderStatus ", SC.getConnection());
             r.SelectCommand.Parameters.AddWithValue("@ID", this.ID);
             string newDateTime = this.createDate.ToString("yyyy-MM-dd");
-            r.SelectCommand.Parameters.AddWithValue("@creationDate", newDateTime);
+            r.SelectCommand.Parameters.AddWithValue("@createDate", newDateTime);
             newDateTime = this.targetDate.ToString("yyyy-MM-dd");
-            r.SelectCommand.Parameters.AddWithValue("@TargetDate", newDateTime);
+            r.SelectCommand.Parameters.AddWithValue("@targetDate", newDateTime);
             r.SelectCommand.Parameters.AddWithValue("@price", this.price);
             r.SelectCommand.Parameters.AddWithValue("@orderStatus", this.status.ToString());
             SC.Execute_non_query(r);

@@ -183,6 +183,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductionFormForShift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionFormForShift.Designer.cs">
+      <DependentUpon>ProductionFormForShift.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProductionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +377,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="manageProducts.resx">
       <DependentUpon>manageProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionFormForShift.resx">
+      <DependentUpon>ProductionFormForShift.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionForm.resx">
       <DependentUpon>ProductionForm.cs</DependentUpon>

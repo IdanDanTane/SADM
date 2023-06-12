@@ -63,7 +63,7 @@ namespace Group_2
                             SqlDataAdapter cmd = new SqlDataAdapter("EXECUTE [dbo].[Add_ProductionProduct]  @prID, @pid, @amount", sqlConn.getConnection());
                             cmd.SelectCommand.Parameters.AddWithValue("@prID", PR.ID);
                             cmd.SelectCommand.Parameters.AddWithValue("@PID", dataGridView1.Rows[i].Cells[1].Value.ToString());
-                            cmd.SelectCommand.Parameters.Add(quanti);
+                            cmd.SelectCommand.Parameters.AddWithValue("@amount", dataGridView1.Rows[i].Cells[2].Value.ToString());
                             sqlConn.Execute_non_query(cmd);
                         }
                     }

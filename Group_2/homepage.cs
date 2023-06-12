@@ -115,5 +115,11 @@ namespace Group_2
             this.Hide();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProductionFormForShift pr = new ProductionFormForShift();
+            pr.Show();
+            this.Hide();
+        }
     }
 }
