@@ -20,6 +20,7 @@ namespace Group_2
         public static System.Collections.Generic.List<Fault> Faults;
         public static System.Collections.Generic.List<ShiftReport> ShiftReports;
         public static System.Collections.Generic.List<ProductionRequirement> productionRequirements;
+        public static System.Collections.Generic.List<Forecast> Forecasts;
         [STAThread]
         public static void init_Employees()//מילוי המערך מתוך בסיס הנתונים
         {
@@ -154,6 +155,22 @@ namespace Group_2
                 productionRequirements.Add(PR);
             }
         }
+        public static void init_Forecast()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewForecast";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            Forecasts = new List<Forecast>();
+
+            while (rdr.Read())
+            {
+
+                Forecast F = new Forecast((DateTime)rdr.GetValue(1), (DateTime)rdr.GetValue(2), false);
+                Forecasts.Add(F);
+            }
+        }
         public static Customer seekCustomer(string email)
         {
             foreach (Customer c in Customers)
@@ -197,6 +214,7 @@ namespace Group_2
             init_Faults();
             init_ShiftReport();
             init_ProductionRequirement();
+            init_Forecast();
             Application.Run(new Login());
         }
 
