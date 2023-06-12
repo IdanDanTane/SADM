@@ -107,5 +107,12 @@ namespace Group_2
         {
 
         }
+
+        private void productionForm_Click(object sender, EventArgs e)
+        {
+            ProductionForm pr = new ProductionForm();
+            pr.Show();
+            this.Hide();
+        }
     }
 }

@@ -183,6 +183,14 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionForm.Designer.cs">
+      <DependentUpon>ProductionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionRequirement.cs" />
+    <Compile Include="OrderStatus.cs" />
     <Compile Include="ShiftReport.cs" />
     <Compile Include="Create fault.cs">
       <SubType>Form</SubType>
@@ -351,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="manageProducts.resx">
       <DependentUpon>manageProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionForm.resx">
+      <DependentUpon>ProductionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchCUST.resx">
       <DependentUpon>searchCUST.cs</DependentUpon>
