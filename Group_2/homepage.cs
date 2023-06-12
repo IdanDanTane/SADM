@@ -96,6 +96,11 @@ namespace Group_2
             this.Hide();
         }
 
-        
+        private void updateStock_Click(object sender, EventArgs e)
+        {
+            updateStock_ShiftManager updateStock_ShiftManager = new updateStock_ShiftManager();
+            updateStock_ShiftManager.Show();
+            this.Hide();
+        }
     }
 }

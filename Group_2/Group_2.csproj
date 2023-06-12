@@ -276,16 +276,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SADM_2DataSet2.xsd</DependentUpon>
     </Compile>
-
     <Compile Include="searchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="searchProduct.Designer.cs">
       <DependentUpon>searchProduct.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Shift.cs" />
-
     <Compile Include="SQL_CON.cs" />
     <Compile Include="CreateEmployee.cs">
       <SubType>Form</SubType>
@@ -307,6 +304,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="updateStock_ShiftManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateStock_ShiftManager.Designer.cs">
+      <DependentUpon>updateStock_ShiftManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="updateStock_StockKeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateStock_StockKeeper.Designer.cs">
+      <DependentUpon>updateStock_StockKeeper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Urgency.cs" />
     <Compile Include="viewCUST.cs">
       <SubType>Form</SubType>
@@ -386,6 +395,12 @@
     </Compile>
     <EmbeddedResource Include="searchProduct.resx">
       <DependentUpon>searchProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateStock_ShiftManager.resx">
+      <DependentUpon>updateStock_ShiftManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateStock_StockKeeper.resx">
+      <DependentUpon>updateStock_StockKeeper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewCUST.resx">
       <DependentUpon>viewCUST.cs</DependentUpon>
