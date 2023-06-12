@@ -67,5 +67,10 @@ namespace Group_2
             r.SelectCommand.Parameters.AddWithValue("@Amount", this.amount);
             SC.Execute_non_query(r);
         }
+
+        public override string ToString()
+        {
+            return this.Id;
+        }
     }
 }

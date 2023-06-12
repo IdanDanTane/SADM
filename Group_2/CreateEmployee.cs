@@ -104,5 +104,15 @@ namespace Group_2
             this.Hide();
 
         }
+
+        private void invalidEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void invalidPhone_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
