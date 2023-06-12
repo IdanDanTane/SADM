@@ -18,6 +18,7 @@ namespace Group_2
         public static System.Collections.Generic.List<Material> Materials;
         public static System.Collections.Generic.List<Shift> Shifts;
         public static System.Collections.Generic.List<Fault> Faults;
+        public static System.Collections.Generic.List<ShiftReport> ShiftReports;
         [STAThread]
         public static void init_Employees()//מילוי המערך מתוך בסיס הנתונים
         {
@@ -46,7 +47,16 @@ namespace Group_2
 
             while (rdr.Read())
             {
-                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), false);
+                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(), false,false);
+                Customers.Add(cust);
+            }
+             c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.view_CustomerArchive";
+             SC = new SQL_CON();
+            rdr = SC.Execute_query(c);
+            while (rdr.Read())
+            {
+                Customer cust = new Customer(rdr.GetValue(0).ToString(), rdr.GetValue(1).ToString(), rdr.GetValue(2).ToString(), rdr.GetValue(3).ToString(),true ,false);
                 Customers.Add(cust);
             }
         }
@@ -118,7 +128,23 @@ namespace Group_2
                 Procducts.Add(p);
             }
         }
-        public static Customer seekCustomer(string email)
+        public static void init_ShiftReport()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewShiftReports";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            ShiftReports = new List<ShiftReport>();
+
+            while (rdr.Read())
+            {
+
+                ShiftReport SR = new ShiftReport(rdr.GetValue(0).ToString(), false);
+                ShiftReports.Add(SR);
+            }
+        }
+                public static Customer seekCustomer(string email)
         {
             foreach (Customer c in Customers)
             {
@@ -159,6 +185,7 @@ namespace Group_2
             init_Products();
             init_Shifts();
             init_Faults();
+            init_ShiftReport();
             Application.Run(new Login());
         }
 

@@ -64,7 +64,7 @@ namespace Group_2
 
         private void create_Employee_Click(object sender, EventArgs e, DateTimePicker employeeBirthDate)
         {
-            Employee E = new Employee(EmployeeID.Text, EmployeePhone.Text, EmployeeEmail.Text, EmployeeFirstName.Text, EmployeeLastName.Text, employeeBirthDate.Value ,(employeeType)Enum.Parse(typeof(employeeType),EmployeeType_choose.Text.Replace(' ', '_')),true);
+            Employee E = new Employee(EmployeeID.Text, EmployeePhone.Text, EmployeeEmail.Text, EmployeeFirstName.Text, EmployeeLastName.Text, employeeBirthDate.Value ,(employeeType)Enum.Parse(typeof(employeeType),EmployeeType_choose.Text.Replace(' ', '_')),true,true);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

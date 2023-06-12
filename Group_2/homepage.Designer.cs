@@ -126,6 +126,7 @@
             this.EndshiftReport.TabIndex = 8;
             this.EndshiftReport.Text = "Create end shift report";
             this.EndshiftReport.UseVisualStyleBackColor = true;
+            this.EndshiftReport.Click += new System.EventHandler(this.EndshiftReport_Click);
             // 
             // updateStock
             // 
@@ -164,6 +165,7 @@
             this.Controls.Add(this.label1);
             this.Name = "homepage";
             this.Text = "homepage";
+            this.Load += new System.EventHandler(this.homepage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
