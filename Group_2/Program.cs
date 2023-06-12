@@ -19,6 +19,8 @@ namespace Group_2
         public static System.Collections.Generic.List<Shift> Shifts;
         public static System.Collections.Generic.List<Fault> Faults;
         public static System.Collections.Generic.List<ShiftReport> ShiftReports;
+        public static System.Collections.Generic.List<ProductionRequirement> productionRequirements;
+        public static System.Collections.Generic.List<Forecast> Forecasts;
         [STAThread]
         public static void init_Employees()//מילוי המערך מתוך בסיס הנתונים
         {
@@ -106,7 +108,7 @@ namespace Group_2
              SC = new SQL_CON();
              rdr = SC.Execute_query(c);
 
-            
+
 
             while (rdr.Read())
             {
@@ -182,7 +184,41 @@ namespace Group_2
                 ShiftReports.Add(SR);
             }
         }
-                public static Customer seekCustomer(string email)
+        public static void init_ProductionRequirement()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewProduction";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            productionRequirements = new List<ProductionRequirement>();
+
+            while (rdr.Read())
+            {
+
+
+                OrderStatus os = (OrderStatus)Enum.Parse(typeof(OrderStatus), rdr.GetValue(4).ToString());
+                ProductionRequirement PR = new ProductionRequirement(rdr.GetValue(0).ToString(), (DateTime)rdr.GetValue(1), (DateTime)rdr.GetValue(2), (decimal)rdr.GetValue(3), os, false);
+                productionRequirements.Add(PR);
+            }
+        }
+        public static void init_Forecast()//מילוי המערך מתוך בסיס הנתונים
+        {
+            SqlCommand c = new SqlCommand();
+            c.CommandText = "EXECUTE dbo.ViewForecast";
+            SQL_CON SC = new SQL_CON();
+            SqlDataReader rdr = SC.Execute_query(c);
+
+            Forecasts = new List<Forecast>();
+
+            while (rdr.Read())
+            {
+
+                Forecast F = new Forecast((DateTime)rdr.GetValue(1), (DateTime)rdr.GetValue(2), false);
+                Forecasts.Add(F);
+            }
+        }
+        public static Customer seekCustomer(string email)
         {
             foreach (Customer c in Customers)
             {
@@ -224,20 +260,29 @@ namespace Group_2
             init_Shifts();
             init_Faults();
             init_ShiftReport();
+            init_ProductionRequirement();
+            init_Forecast();
             Application.Run(new Login());
         }
 
-        //   internal static object seekProduct(string v)
-        //   {
-        //      throw new NotImplementedException();
-        //   }
+        
 
-        internal static Product seekProduct(string id)
+        public static Product seekProduct(string id)
         {
             foreach (Product P in Procducts)
             {
                 if (P.Id == id)
                     return P;
+            }
+            return null;
+        }
+
+        public static ProductionRequirement seekProduction(string id)
+        {
+            foreach (ProductionRequirement PR in productionRequirements)
+            {
+                if (PR.ID == id)
+                    return PR;
             }
             return null;
         }

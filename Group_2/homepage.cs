@@ -102,10 +102,8 @@ namespace Group_2
             this.Hide();
         }
 
-        private void EndshiftReport_Click(object sender, EventArgs e)
-        {
 
-        }
+
 
         private void updateStock_Click(object sender, EventArgs e)
 
@@ -129,6 +127,20 @@ namespace Group_2
                 this.Hide();
 
             }
+
+        private void productionForm_Click(object sender, EventArgs e)
+        {
+            ProductionForm pr = new ProductionForm();
+            pr.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProductionFormForShift pr = new ProductionFormForShift();
+            pr.Show();
+            this.Hide();
+
         }
     }
 }

@@ -39,8 +39,11 @@ namespace Group_2
                 Program.Procducts.Add(this);
             }
         }
+        public override string ToString()
+        {
+            return this.Id;
+        }
 
-     
         private void createProduct()
         {
             SQL_CON sqlConn = new SQL_CON();
