@@ -18,10 +18,12 @@ namespace Group_2
 
         public decimal pricePerTon { get; set; }
 
+        public bool inArchive;
+
         public Dictionary<Material, decimal> componenets { get; set; }
 
         
-        public Product( string id, string name, DateTime expDate, decimal price, ProductType Type, bool isNew)
+        public Product( string id, string name, DateTime expDate, decimal price, ProductType Type, bool inArchive, bool isNew)
         {
             this.Id = id;
             this.Name = name;
@@ -29,6 +31,7 @@ namespace Group_2
             this.pricePerTon = price;
             this.GetMaterials();
             this.ProductType = Type;
+            this.inArchive = inArchive;
             if (isNew)
             {
                 this.createProduct();

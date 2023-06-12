@@ -20,13 +20,14 @@ namespace Group_2
         public string lastName;
         public DateTime birthDate;
         public employeeType employeeType;
+        public bool inArchive;
 
 
 
 
 
 
-            public Employee(string employeeID, string phoneNumber, string email, string firstName, string lastName,DateTime BirthDate ,employeeType employeeType, bool isNew)
+            public Employee(string employeeID, string phoneNumber, string email, string firstName, string lastName,DateTime BirthDate ,employeeType employeeType, bool inArchive, bool isNew)
         {
             this.employeeID = employeeID;
             this.phoneNumber = phoneNumber;
@@ -35,6 +36,7 @@ namespace Group_2
             this.lastName = lastName;
             this.birthDate = BirthDate;
             this.employeeType = employeeType;
+            this.inArchive = inArchive;
             if (isNew)
             {
                 this.create_employee();
