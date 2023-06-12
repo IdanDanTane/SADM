@@ -102,11 +102,11 @@ namespace Group_2
                 Materials.Add(m);
             }
              c = new SqlCommand();
-            c.CommandText = "EXECUTE dbo.Get_MaterialArchivel";
+            c.CommandText = "EXECUTE dbo.Get_MaterialArchive";
              SC = new SQL_CON();
              rdr = SC.Execute_query(c);
 
-            Materials = new List<Material>();
+           
 
             while (rdr.Read())
             {
@@ -156,7 +156,7 @@ namespace Group_2
              SC = new SQL_CON();
              rdr = SC.Execute_query(c);
 
-            Procducts = new List<Product>();
+
 
             while (rdr.Read())
             {
