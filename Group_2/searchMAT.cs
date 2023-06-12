@@ -129,7 +129,7 @@ namespace Group_2
             SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[MoveMaterialToArchive] @MaterialID", SC.getConnection());
             r.SelectCommand.Parameters.AddWithValue("@MaterialID", temp.Id);
             SC.Execute_non_query(r);
-            Program.Materials.Remove(temp);
+            temp.inArchive = true;
 
         }
 

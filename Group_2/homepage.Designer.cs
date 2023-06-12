@@ -39,6 +39,7 @@
             this.EndshiftReport = new System.Windows.Forms.Button();
             this.updateStock = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -53,8 +54,9 @@
             // customers
             // 
             this.customers.Location = new System.Drawing.Point(154, 86);
+            this.customers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customers.Name = "customers";
-            this.customers.Size = new System.Drawing.Size(95, 37);
+            this.customers.Size = new System.Drawing.Size(94, 38);
             this.customers.TabIndex = 1;
             this.customers.Text = "customers";
             this.customers.UseVisualStyleBackColor = true;
@@ -63,8 +65,9 @@
             // employees
             // 
             this.employees.Location = new System.Drawing.Point(154, 172);
+            this.employees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employees.Name = "employees";
-            this.employees.Size = new System.Drawing.Size(95, 34);
+            this.employees.Size = new System.Drawing.Size(94, 34);
             this.employees.TabIndex = 2;
             this.employees.Text = "employees";
             this.employees.UseVisualStyleBackColor = true;
@@ -73,8 +76,9 @@
             // products
             // 
             this.products.Location = new System.Drawing.Point(533, 86);
+            this.products.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.products.Name = "products";
-            this.products.Size = new System.Drawing.Size(103, 37);
+            this.products.Size = new System.Drawing.Size(104, 38);
             this.products.TabIndex = 3;
             this.products.Text = "products";
             this.products.UseVisualStyleBackColor = true;
@@ -83,6 +87,7 @@
             // materials
             // 
             this.materials.Location = new System.Drawing.Point(542, 172);
+            this.materials.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.materials.Name = "materials";
             this.materials.Size = new System.Drawing.Size(94, 34);
             this.materials.TabIndex = 4;
@@ -93,6 +98,7 @@
             // forecast
             // 
             this.forecast.Location = new System.Drawing.Point(806, 65);
+            this.forecast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.forecast.Name = "forecast";
             this.forecast.Size = new System.Drawing.Size(132, 58);
             this.forecast.TabIndex = 5;
@@ -102,6 +108,7 @@
             // incomeReport
             // 
             this.incomeReport.Location = new System.Drawing.Point(806, 155);
+            this.incomeReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.incomeReport.Name = "incomeReport";
             this.incomeReport.Size = new System.Drawing.Size(132, 51);
             this.incomeReport.TabIndex = 6;
@@ -112,17 +119,20 @@
             // productionForm
             // 
             this.productionForm.Location = new System.Drawing.Point(806, 231);
+            this.productionForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productionForm.Name = "productionForm";
-            this.productionForm.Size = new System.Drawing.Size(132, 51);
+            this.productionForm.Size = new System.Drawing.Size(177, 96);
             this.productionForm.TabIndex = 7;
             this.productionForm.Text = "Create prudoction form";
             this.productionForm.UseVisualStyleBackColor = true;
+            this.productionForm.Click += new System.EventHandler(this.productionForm_Click);
             // 
             // EndshiftReport
             // 
             this.EndshiftReport.Location = new System.Drawing.Point(533, 231);
+            this.EndshiftReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EndshiftReport.Name = "EndshiftReport";
-            this.EndshiftReport.Size = new System.Drawing.Size(132, 51);
+            this.EndshiftReport.Size = new System.Drawing.Size(172, 96);
             this.EndshiftReport.TabIndex = 8;
             this.EndshiftReport.Text = "Create end shift report";
             this.EndshiftReport.UseVisualStyleBackColor = true;
@@ -131,6 +141,7 @@
             // updateStock
             // 
             this.updateStock.Location = new System.Drawing.Point(154, 231);
+            this.updateStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateStock.Name = "updateStock";
             this.updateStock.Size = new System.Drawing.Size(132, 51);
             this.updateStock.TabIndex = 9;
@@ -140,6 +151,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(542, 345);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 39);
             this.button1.TabIndex = 10;
@@ -147,11 +159,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(37, 326);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(268, 58);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "production for shift";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.updateStock);
             this.Controls.Add(this.EndshiftReport);
@@ -163,9 +186,9 @@
             this.Controls.Add(this.employees);
             this.Controls.Add(this.customers);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "homepage";
             this.Text = "homepage";
-            this.Load += new System.EventHandler(this.homepage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +207,6 @@
         private System.Windows.Forms.Button EndshiftReport;
         private System.Windows.Forms.Button updateStock;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

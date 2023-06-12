@@ -42,7 +42,7 @@ namespace Group_2
                 this.productName.Text,
                 this.expirationDate.Value,
                 decimal.Parse(this.pricePerTon.Text),
-                (ProductType)Enum.Parse(typeof(ProductType), Type.Text.Replace(' ', '_')),true
+                (ProductType)Enum.Parse(typeof(ProductType), Type.Text.Replace(' ', '_')),false,true
 
             );
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
