@@ -54,7 +54,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(296, 384);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+           // this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Material
             // 
@@ -79,7 +79,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+           // this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -116,7 +116,7 @@
             this.label1.Size = new System.Drawing.Size(55, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Material";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+          //  this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

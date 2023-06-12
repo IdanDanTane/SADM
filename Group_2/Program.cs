@@ -276,5 +276,15 @@ namespace Group_2
             }
             return null;
         }
+
+        public static ProductionRequirement seekProduction(string id)
+        {
+            foreach (ProductionRequirement PR in productionRequirements)
+            {
+                if (PR.ID == id)
+                    return PR;
+            }
+            return null;
+        }
     }
 }
