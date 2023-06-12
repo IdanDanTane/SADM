@@ -50,6 +50,7 @@ namespace Group_2
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null)
                 {
+
                     if (((Boolean)dataGridView1.Rows[i].Cells[0].Value).ToString().Equals("True"))
                     {
                         {
@@ -74,6 +75,17 @@ namespace Group_2
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ShiftID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void EndshiftReport_Click(object sender, EventArgs e)
+        {
+            CreateShiftReport SR = new CreateShiftReport();
+            SR.Show();
+            this.Hide();
         }
     }
 }

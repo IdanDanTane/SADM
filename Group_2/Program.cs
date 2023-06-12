@@ -108,7 +108,7 @@ namespace Group_2
              SC = new SQL_CON();
              rdr = SC.Execute_query(c);
 
-           
+
 
             while (rdr.Read())
             {
