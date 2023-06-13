@@ -48,6 +48,8 @@
             this.AmountEX = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Status = new System.Windows.Forms.ComboBox();
+            this.invalid_matID = new System.Windows.Forms.Label();
+            this.invalid_ExpDate = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 73);
+            this.label2.Location = new System.Drawing.Point(53, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 20);
             this.label2.TabIndex = 2;
@@ -72,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 115);
+            this.label3.Location = new System.Drawing.Point(52, 160);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 3;
@@ -81,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(52, 157);
+            this.label4.Location = new System.Drawing.Point(52, 202);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(142, 20);
             this.label4.TabIndex = 4;
@@ -90,7 +92,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 191);
+            this.label5.Location = new System.Drawing.Point(52, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 5;
@@ -99,7 +101,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(363, 40);
+            this.label6.Location = new System.Drawing.Point(416, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 20);
             this.label6.TabIndex = 6;
@@ -108,7 +110,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(52, 233);
+            this.label7.Location = new System.Drawing.Point(52, 278);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 20);
             this.label7.TabIndex = 7;
@@ -124,7 +126,7 @@
             // 
             // MATname
             // 
-            this.MATname.Location = new System.Drawing.Point(221, 73);
+            this.MATname.Location = new System.Drawing.Point(221, 118);
             this.MATname.Name = "MATname";
             this.MATname.Size = new System.Drawing.Size(100, 26);
             this.MATname.TabIndex = 9;
@@ -132,7 +134,7 @@
             // 
             // priceperton
             // 
-            this.priceperton.Location = new System.Drawing.Point(221, 112);
+            this.priceperton.Location = new System.Drawing.Point(221, 157);
             this.priceperton.Name = "priceperton";
             this.priceperton.Size = new System.Drawing.Size(100, 26);
             this.priceperton.TabIndex = 10;
@@ -140,7 +142,7 @@
             // 
             // minthersh
             // 
-            this.minthersh.Location = new System.Drawing.Point(221, 151);
+            this.minthersh.Location = new System.Drawing.Point(221, 196);
             this.minthersh.Name = "minthersh";
             this.minthersh.Size = new System.Drawing.Size(100, 26);
             this.minthersh.TabIndex = 11;
@@ -149,7 +151,7 @@
             // Loc
             // 
             this.Loc.FormattingEnabled = true;
-            this.Loc.Location = new System.Drawing.Point(221, 233);
+            this.Loc.Location = new System.Drawing.Point(221, 278);
             this.Loc.Name = "Loc";
             this.Loc.Size = new System.Drawing.Size(121, 28);
             this.Loc.TabIndex = 14;
@@ -188,7 +190,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(363, 85);
+            this.label8.Location = new System.Drawing.Point(413, 85);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 20);
             this.label8.TabIndex = 19;
@@ -206,15 +208,16 @@
             // 
             // AmountEX
             // 
-            this.AmountEX.Location = new System.Drawing.Point(532, 132);
+            this.AmountEX.Location = new System.Drawing.Point(532, 163);
             this.AmountEX.Name = "AmountEX";
             this.AmountEX.Size = new System.Drawing.Size(100, 26);
             this.AmountEX.TabIndex = 22;
+            this.AmountEX.TextChanged += new System.EventHandler(this.AmountEX_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(363, 135);
+            this.label9.Location = new System.Drawing.Point(446, 163);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 20);
             this.label9.TabIndex = 21;
@@ -223,17 +226,41 @@
             // Status
             // 
             this.Status.FormattingEnabled = true;
-            this.Status.Location = new System.Drawing.Point(221, 191);
+            this.Status.Location = new System.Drawing.Point(221, 236);
             this.Status.Name = "Status";
             this.Status.Size = new System.Drawing.Size(121, 28);
             this.Status.TabIndex = 23;
             this.Status.SelectedIndexChanged += new System.EventHandler(this.Status_SelectedIndexChanged);
+            // 
+            // invalid_matID
+            // 
+            this.invalid_matID.AutoSize = true;
+            this.invalid_matID.ForeColor = System.Drawing.Color.Red;
+            this.invalid_matID.Location = new System.Drawing.Point(131, 69);
+            this.invalid_matID.Name = "invalid_matID";
+            this.invalid_matID.Size = new System.Drawing.Size(243, 20);
+            this.invalid_matID.TabIndex = 24;
+            this.invalid_matID.Text = "Material ID format: \" M*number* \"";
+            this.invalid_matID.Click += new System.EventHandler(this.invalid_matID_Click);
+            // 
+            // invalid_ExpDate
+            // 
+            this.invalid_ExpDate.AutoSize = true;
+            this.invalid_ExpDate.ForeColor = System.Drawing.Color.Red;
+            this.invalid_ExpDate.Location = new System.Drawing.Point(463, 124);
+            this.invalid_ExpDate.Name = "invalid_ExpDate";
+            this.invalid_ExpDate.Size = new System.Drawing.Size(278, 20);
+            this.invalid_ExpDate.TabIndex = 25;
+            this.invalid_ExpDate.Text = "Exp date must be after the recive date";
+            this.invalid_ExpDate.Click += new System.EventHandler(this.invalid_ExpDate_Click);
             // 
             // createMAT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invalid_ExpDate);
+            this.Controls.Add(this.invalid_matID);
             this.Controls.Add(this.Status);
             this.Controls.Add(this.AmountEX);
             this.Controls.Add(this.label9);
@@ -283,5 +310,7 @@
         private System.Windows.Forms.TextBox AmountEX;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox Status;
+        private System.Windows.Forms.Label invalid_matID;
+        private System.Windows.Forms.Label invalid_ExpDate;
     }
 }

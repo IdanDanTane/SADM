@@ -28,6 +28,7 @@ namespace Group_2
             this.UpdateEMP.Enabled = false;
             EmployeeType_choose.DataSource = GetEmployeeTypeList();
             EmployeeType_choose.DisplayMember = "Description";
+      
         }
     
         private List<EmployeeTypeItem> GetEmployeeTypeList()
@@ -65,11 +66,12 @@ namespace Group_2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+        
         }
 
         private void search_Employee_Click(object sender, EventArgs e)
         {
+           
             if (Program.seekEmployee(EmployeeID.Text.ToString()) == null)
             {
                 MessageBox.Show("employee does not exist. please try again");
@@ -99,17 +101,45 @@ namespace Group_2
         }
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
+            if (!(string.IsNullOrWhiteSpace(EmployeePhone.Text)))
+            {
+                if (!(Program.IsValidPhone(EmployeePhone.Text)))
+                    invalidPhone.Show();
+                else
+                    invalidPhone.Hide();
+            }
+            else
+                invalidPhone.Show();
         }
 
         private void employeeBirthDate_ValueChanged(object sender, EventArgs e)
         {
             employeeBirthDate.CustomFormat = "yyyy-MM-dd";
+
+            if (employeeBirthDate.Value > DateTime.Today)
+                invalidBD.Show();
+            else
+                invalidBD.Hide();
+
+            if (employeeBirthDate.Value.Equals(DateTime.Today))
+                 invalidBD.Show();
+            else
+                invalidBD.Hide();
+
+            
         }
 
         private void EmployeeEmail_TextChanged(object sender, EventArgs e)
         {
-
+            if (!(string.IsNullOrWhiteSpace(EmployeeEmail.Text)))
+            {
+                if (!(Program.IsValidEmail(EmployeeEmail.Text)))
+                    invalidEmail.Show();
+                else
+                    invalidEmail.Hide();
+            }
+            else
+                invalidEmail.Show();
         }
 
         private void EmployeeFirstName_TextChanged(object sender, EventArgs e)
@@ -146,24 +176,68 @@ namespace Group_2
         }
 
         private void UpdateEMP_Click(object sender, EventArgs e)
-        { 
-            SQL_CON SC = new SQL_CON();
-            SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[update_employee] @employeeId, @phoneNumber, @email,@firstName , @lastName , @birthDate , @type", SC.getConnection());
-            r.SelectCommand.Parameters.AddWithValue("@employeeId", temp.employeeID);
-            r.SelectCommand.Parameters.AddWithValue("@phoneNumber", this.EmployeePhone.Text);
-            r.SelectCommand.Parameters.AddWithValue("@email", this.EmployeeEmail.Text);
-            r.SelectCommand.Parameters.AddWithValue("@firstName", this.EmployeeFirstName.Text);
-            r.SelectCommand.Parameters.AddWithValue("@lastName", this.EmployeeLastName.Text);
-            string newDateTime = this.employeeBirthDate.Value.ToString("yyyy-MM-dd");
-            r.SelectCommand.Parameters.AddWithValue("@birthDate", newDateTime);
-            r.SelectCommand.Parameters.AddWithValue("@type", this.EmployeeType_choose.Text);
-            SC.Execute_non_query(r);
-            temp.email = this.EmployeeEmail.Text;  
-            temp.firstName = this.EmployeeFirstName.Text; 
-            temp.lastName = this.EmployeeLastName.Text;
-            temp.phoneNumber = this.EmployeePhone.Text;
-            temp.birthDate = this.employeeBirthDate.Value;
-            temp.employeeType = (employeeType)Enum.Parse(typeof(employeeType), this.EmployeeType_choose.Text.Replace(' ','_'));
+        {
+            // update employee 
+
+            try
+            {
+                Employee emp = this.updateEmployee();
+
+                SQL_CON SC = new SQL_CON();
+                SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[update_employee] @employeeId, @phoneNumber, @email,@firstName , @lastName , @birthDate , @type", SC.getConnection());
+                r.SelectCommand.Parameters.AddWithValue("@employeeId", temp.employeeID);
+                r.SelectCommand.Parameters.AddWithValue("@phoneNumber", this.EmployeePhone.Text);
+                r.SelectCommand.Parameters.AddWithValue("@email", this.EmployeeEmail.Text);
+                r.SelectCommand.Parameters.AddWithValue("@firstName", this.EmployeeFirstName.Text);
+                r.SelectCommand.Parameters.AddWithValue("@lastName", this.EmployeeLastName.Text);
+                string newDateTime = this.employeeBirthDate.Value.ToString("yyyy-MM-dd");
+                r.SelectCommand.Parameters.AddWithValue("@birthDate", newDateTime);
+                r.SelectCommand.Parameters.AddWithValue("@type", this.EmployeeType_choose.Text);
+                SC.Execute_non_query(r);
+                temp.email = this.EmployeeEmail.Text;
+                temp.firstName = this.EmployeeFirstName.Text;
+                temp.lastName = this.EmployeeLastName.Text;
+                temp.phoneNumber = this.EmployeePhone.Text;
+                temp.birthDate = this.employeeBirthDate.Value;
+                temp.employeeType = (employeeType)Enum.Parse(typeof(employeeType), this.EmployeeType_choose.Text.Replace(' ', '_'));
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("could not update the employee, plese try again");
+            }
+
+        }
+
+        private Employee updateEmployee()
+        {
+            if (string.IsNullOrWhiteSpace(EmployeeID.Text) || string.IsNullOrWhiteSpace(EmployeePhone.Text) || string.IsNullOrWhiteSpace(EmployeeEmail.Text) || string.IsNullOrWhiteSpace(EmployeeFirstName.Text) || string.IsNullOrWhiteSpace(EmployeeLastName.Text))
+                throw new Exception(); // One or more of the textboxes are empty or contain only whitespace
+
+            if (((!(Program.IsValidID(EmployeeID.Text))) || (!(Program.IsValidPhone(EmployeePhone.Text))) || (!(Program.IsValidEmail(EmployeeEmail.Text)))))
+                throw new Exception(); // One or more of the textboxes are not valid
+
+            if (employeeBirthDate.Value > DateTime.Today)
+                throw new Exception();
+
+            if (employeeBirthDate.Value.Equals(DateTime.Today))
+                throw new Exception();
+
+            Employee E = new Employee(EmployeeID.Text, EmployeePhone.Text, EmployeeEmail.Text, EmployeeFirstName.Text, EmployeeLastName.Text, employeeBirthDate.Value, (employeeType)Enum.Parse(typeof(employeeType), EmployeeType_choose.Text.Replace(' ', '_')), true, true);
+            return E;
+
+        }
+
+    
+
+        private void invalidPhone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void invalidEmail_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -252,8 +252,10 @@ namespace Group_2
         //verify fields
         public static bool IsValidEmail(string email) // Check email format
         {
-             Regex format = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,5}$");
+             Regex format = new Regex(@"^[\w-\.]+@([\w-])+\.+(com|co\.il|org|gov)$");
+            //the email must finish with com / co.il / org or gov
             return format.IsMatch(email);
+ 
         }
          public static bool IsValidPhone(string phone) // Check phone format
          {
@@ -264,7 +266,27 @@ namespace Group_2
          {
              string format = @"^\d{5}(\d{1})?$";
              return Regex.IsMatch(zipCode, format);
-       }
+         }
+        public static bool IsValidID(string employeeID) // Check ID format
+        {
+            string format = @"^\d{9}?$";
+            return Regex.IsMatch(employeeID, format);
+        }
+        public static bool IsValidMatID(string Id) // Check  materialID format
+        {
+            string format = @"^M\d+";
+            return Regex.IsMatch(Id, format);
+        }
+        public static bool IsValidNumbers(string numbers) // Check only numbers format- prices, amount...
+        {
+            string format = @"^\d+";
+            return Regex.IsMatch(numbers, format);
+        }
+        public static bool IsValidProducttID(string Id) // Check  materialID format
+        {
+            string format = @"^P\d+";
+            return Regex.IsMatch(Id, format);
+        }
 
         static void Main()
         {

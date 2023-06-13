@@ -104,6 +104,7 @@
             this.forecast.TabIndex = 5;
             this.forecast.Text = "create forecast";
             this.forecast.UseVisualStyleBackColor = true;
+            this.forecast.Click += new System.EventHandler(this.forecast_Click);
             // 
             // incomeReport
             // 
@@ -147,6 +148,7 @@
             this.updateStock.TabIndex = 9;
             this.updateStock.Text = "update stock";
             this.updateStock.UseVisualStyleBackColor = true;
+            this.updateStock.Click += new System.EventHandler(this.updateStock_Click_1);
             // 
             // button1
             // 

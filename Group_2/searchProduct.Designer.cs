@@ -45,10 +45,11 @@
             this.deleteProduct = new System.Windows.Forms.Button();
             this.update_Product = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.needed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.MaterialID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.invalid_ExpDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,7 +189,7 @@
             this.deleteProduct.Name = "deleteProduct";
             this.deleteProduct.Size = new System.Drawing.Size(155, 41);
             this.deleteProduct.TabIndex = 28;
-            this.deleteProduct.Text = "Deleta Product";
+            this.deleteProduct.Text = "Delete Product";
             this.deleteProduct.UseVisualStyleBackColor = true;
             this.deleteProduct.Click += new System.EventHandler(this.deleteProduct_Click);
             // 
@@ -218,15 +219,6 @@
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(457, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 20);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Materials  :";
-            // 
             // needed
             // 
             this.needed.HeaderText = "needed";
@@ -251,11 +243,31 @@
             this.Amount.ReadOnly = true;
             this.Amount.Width = 150;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(457, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 20);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Materials  :";
+            // 
+            // invalid_ExpDate
+            // 
+            this.invalid_ExpDate.AutoSize = true;
+            this.invalid_ExpDate.ForeColor = System.Drawing.Color.Red;
+            this.invalid_ExpDate.Location = new System.Drawing.Point(172, 198);
+            this.invalid_ExpDate.Name = "invalid_ExpDate";
+            this.invalid_ExpDate.Size = new System.Drawing.Size(213, 20);
+            this.invalid_ExpDate.TabIndex = 32;
+            this.invalid_ExpDate.Text = "Exp date must be after today";
+            // 
             // searchProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invalid_ExpDate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.update_Product);
@@ -306,5 +318,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn needed;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Label invalid_ExpDate;
     }
 }
