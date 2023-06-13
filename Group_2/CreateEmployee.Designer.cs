@@ -47,6 +47,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.invalidEmail = new System.Windows.Forms.Label();
             this.invalidPhone = new System.Windows.Forms.Label();
+            this.invalid_ID = new System.Windows.Forms.Label();
+            this.invalidBD = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // create_Employee
@@ -214,7 +216,9 @@
             // 
             this.invalidEmail.AutoSize = true;
             this.invalidEmail.ForeColor = System.Drawing.Color.Red;
+
             this.invalidEmail.Location = new System.Drawing.Point(594, 232);
+
             this.invalidEmail.Name = "invalidEmail";
             this.invalidEmail.Size = new System.Drawing.Size(273, 16);
             this.invalidEmail.TabIndex = 17;
@@ -225,20 +229,46 @@
             // 
             this.invalidPhone.AutoSize = true;
             this.invalidPhone.ForeColor = System.Drawing.Color.Red;
+
             this.invalidPhone.Location = new System.Drawing.Point(595, 175);
             this.invalidPhone.Name = "invalidPhone";
             this.invalidPhone.Size = new System.Drawing.Size(222, 16);
+
             this.invalidPhone.TabIndex = 18;
-            this.invalidPhone.Text = "phone number must contain 10 digits";
+            this.invalidPhone.Text = "Phone number must contain 10 digits";
             this.invalidPhone.Click += new System.EventHandler(this.invalidPhone_Click);
+            // 
+            // invalid_ID
+            // 
+            this.invalid_ID.AutoSize = true;
+            this.invalid_ID.ForeColor = System.Drawing.Color.Red;
+            this.invalid_ID.Location = new System.Drawing.Point(479, 45);
+            this.invalid_ID.Name = "invalid_ID";
+            this.invalid_ID.Size = new System.Drawing.Size(175, 20);
+            this.invalid_ID.TabIndex = 19;
+            this.invalid_ID.Text = "ID must contain 9 digits";
+            this.invalid_ID.Click += new System.EventHandler(this.invalid_ID_Click);
+            // 
+            // invalidBD
+            // 
+            this.invalidBD.AutoSize = true;
+            this.invalidBD.ForeColor = System.Drawing.Color.Red;
+            this.invalidBD.Location = new System.Drawing.Point(599, 238);
+            this.invalidBD.Name = "invalidBD";
+            this.invalidBD.Size = new System.Drawing.Size(259, 20);
+            this.invalidBD.TabIndex = 20;
+            this.invalidBD.Text = "Birth Date must be erlier than today";
+            this.invalidBD.Click += new System.EventHandler(this.invalidBD_Click);
             // 
             // CreateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1282, 653);
+
             this.Controls.Add(this.invalidPhone);
             this.Controls.Add(this.invalidEmail);
             this.Controls.Add(this.button1);
@@ -287,5 +317,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label invalidEmail;
         private System.Windows.Forms.Label invalidPhone;
+        private System.Windows.Forms.Label invalid_ID;
+        private System.Windows.Forms.Label invalidBD;
     }
 }

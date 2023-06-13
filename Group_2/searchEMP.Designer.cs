@@ -47,6 +47,9 @@
             this.back = new System.Windows.Forms.Button();
             this.deleteEMP = new System.Windows.Forms.Button();
             this.UpdateEMP = new System.Windows.Forms.Button();
+            this.invalidPhone = new System.Windows.Forms.Label();
+            this.invalidEmail = new System.Windows.Forms.Label();
+            this.invalidBD = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // search_Employee
@@ -234,13 +237,47 @@
             this.UpdateEMP.UseVisualStyleBackColor = true;
             this.UpdateEMP.Click += new System.EventHandler(this.UpdateEMP_Click);
             // 
+            // invalidPhone
+            // 
+            this.invalidPhone.AutoSize = true;
+            this.invalidPhone.ForeColor = System.Drawing.Color.Red;
+            this.invalidPhone.Location = new System.Drawing.Point(483, 84);
+            this.invalidPhone.Name = "invalidPhone";
+            this.invalidPhone.Size = new System.Drawing.Size(271, 20);
+            this.invalidPhone.TabIndex = 21;
+            this.invalidPhone.Text = "Phone number must contain 10 digits";
+            this.invalidPhone.Click += new System.EventHandler(this.invalidPhone_Click);
+            // 
+            // invalidEmail
+            // 
+            this.invalidEmail.AutoSize = true;
+            this.invalidEmail.ForeColor = System.Drawing.Color.Red;
+            this.invalidEmail.Location = new System.Drawing.Point(483, 123);
+            this.invalidEmail.Name = "invalidEmail";
+            this.invalidEmail.Size = new System.Drawing.Size(323, 20);
+            this.invalidEmail.TabIndex = 22;
+            this.invalidEmail.Text = "Email format: \" ***@***.com / org / co.il / gov \"";
+            this.invalidEmail.Click += new System.EventHandler(this.invalidEmail_Click);
+            // 
+            // invalidBD
+            // 
+            this.invalidBD.AutoSize = true;
+            this.invalidBD.ForeColor = System.Drawing.Color.Red;
+            this.invalidBD.Location = new System.Drawing.Point(574, 238);
+            this.invalidBD.Name = "invalidBD";
+            this.invalidBD.Size = new System.Drawing.Size(259, 20);
+            this.invalidBD.TabIndex = 23;
+            this.invalidBD.Text = "Birth Date must be erlier than today";
+            // 
             // searchEMP
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1282, 653);
+
             this.Controls.Add(this.UpdateEMP);
             this.Controls.Add(this.deleteEMP);
             this.Controls.Add(this.back);
@@ -289,5 +326,8 @@
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Button deleteEMP;
         private System.Windows.Forms.Button UpdateEMP;
+        private System.Windows.Forms.Label invalidPhone;
+        private System.Windows.Forms.Label invalidEmail;
+        private System.Windows.Forms.Label invalidBD;
     }
 }
