@@ -19,14 +19,14 @@ namespace Group_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProductionForm productionForm = new ProductionForm();
+            ProductionFormForShift productionForm = new ProductionFormForShift();
             productionForm.Show();
-            this.Hide();    
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ProductionFormForShift productionForm = new ProductionFormForShift();
+            ProductionForm productionForm = new ProductionForm();
             productionForm.Show();
             this.Hide();
         }

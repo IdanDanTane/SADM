@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(homepage));
             this.label1 = new System.Windows.Forms.Label();
             this.customers = new System.Windows.Forms.Button();
             this.employees = new System.Windows.Forms.Button();
@@ -44,18 +45,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(456, 17);
+            this.label1.Font = new System.Drawing.Font("Aharoni", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(499, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.Size = new System.Drawing.Size(170, 34);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Homepage";
+            this.label1.Text = "Welcome!";
             // 
             // customers
             // 
-            this.customers.Location = new System.Drawing.Point(137, 69);
+            this.customers.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.customers.Location = new System.Drawing.Point(241, 93);
             this.customers.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.customers.Name = "customers";
-            this.customers.Size = new System.Drawing.Size(84, 30);
+            this.customers.Size = new System.Drawing.Size(195, 45);
             this.customers.TabIndex = 1;
             this.customers.Text = "customers";
             this.customers.UseVisualStyleBackColor = true;
@@ -63,10 +66,11 @@
             // 
             // employees
             // 
-            this.employees.Location = new System.Drawing.Point(137, 138);
+            this.employees.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.employees.Location = new System.Drawing.Point(219, 185);
             this.employees.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employees.Name = "employees";
-            this.employees.Size = new System.Drawing.Size(84, 27);
+            this.employees.Size = new System.Drawing.Size(228, 49);
             this.employees.TabIndex = 2;
             this.employees.Text = "employees";
             this.employees.UseVisualStyleBackColor = true;
@@ -74,11 +78,11 @@
             // 
             // products
             // 
-
-            this.products.Location = new System.Drawing.Point(480, 86);
+            this.products.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.products.Location = new System.Drawing.Point(503, 85);
             this.products.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.products.Name = "products";
-            this.products.Size = new System.Drawing.Size(92, 30);
+            this.products.Size = new System.Drawing.Size(166, 53);
             this.products.TabIndex = 3;
             this.products.Text = "products";
             this.products.UseVisualStyleBackColor = true;
@@ -86,12 +90,11 @@
             // 
             // materials
             // 
-
-            this.materials.Location = new System.Drawing.Point(480, 163);
-
+            this.materials.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.materials.Location = new System.Drawing.Point(480, 185);
             this.materials.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.materials.Name = "materials";
-            this.materials.Size = new System.Drawing.Size(84, 27);
+            this.materials.Size = new System.Drawing.Size(199, 50);
             this.materials.TabIndex = 4;
             this.materials.Text = "materials";
             this.materials.UseVisualStyleBackColor = true;
@@ -99,10 +102,11 @@
             // 
             // forecast
             // 
-            this.forecast.Location = new System.Drawing.Point(716, 52);
+            this.forecast.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.forecast.Location = new System.Drawing.Point(742, 85);
             this.forecast.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.forecast.Name = "forecast";
-            this.forecast.Size = new System.Drawing.Size(117, 46);
+            this.forecast.Size = new System.Drawing.Size(164, 69);
             this.forecast.TabIndex = 5;
             this.forecast.Text = "create forecast";
             this.forecast.UseVisualStyleBackColor = true;
@@ -110,10 +114,11 @@
             // 
             // incomeReport
             // 
-            this.incomeReport.Location = new System.Drawing.Point(716, 124);
+            this.incomeReport.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.incomeReport.Location = new System.Drawing.Point(729, 185);
             this.incomeReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.incomeReport.Name = "incomeReport";
-            this.incomeReport.Size = new System.Drawing.Size(117, 41);
+            this.incomeReport.Size = new System.Drawing.Size(198, 41);
             this.incomeReport.TabIndex = 6;
             this.incomeReport.Text = "Create Fault";
             this.incomeReport.UseVisualStyleBackColor = true;
@@ -121,10 +126,11 @@
             // 
             // productionForm
             // 
-            this.productionForm.Location = new System.Drawing.Point(716, 185);
+            this.productionForm.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.productionForm.Location = new System.Drawing.Point(716, 277);
             this.productionForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.productionForm.Name = "productionForm";
-            this.productionForm.Size = new System.Drawing.Size(157, 77);
+            this.productionForm.Size = new System.Drawing.Size(198, 79);
             this.productionForm.TabIndex = 7;
             this.productionForm.Text = "Create prudoction form";
             this.productionForm.UseVisualStyleBackColor = true;
@@ -132,11 +138,11 @@
             // 
             // EndshiftReport
             // 
-
-            this.EndshiftReport.Location = new System.Drawing.Point(480, 231);
+            this.EndshiftReport.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.EndshiftReport.Location = new System.Drawing.Point(471, 277);
             this.EndshiftReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EndshiftReport.Name = "EndshiftReport";
-            this.EndshiftReport.Size = new System.Drawing.Size(153, 77);
+            this.EndshiftReport.Size = new System.Drawing.Size(217, 77);
             this.EndshiftReport.TabIndex = 8;
             this.EndshiftReport.Text = "Create end shift report";
             this.EndshiftReport.UseVisualStyleBackColor = true;
@@ -144,10 +150,11 @@
             // 
             // updateStock
             // 
-            this.updateStock.Location = new System.Drawing.Point(137, 185);
+            this.updateStock.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.updateStock.Location = new System.Drawing.Point(251, 275);
             this.updateStock.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateStock.Name = "updateStock";
-            this.updateStock.Size = new System.Drawing.Size(117, 41);
+            this.updateStock.Size = new System.Drawing.Size(163, 79);
             this.updateStock.TabIndex = 9;
             this.updateStock.Text = "update stock";
             this.updateStock.UseVisualStyleBackColor = true;
@@ -155,10 +162,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(482, 276);
+            this.button1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.Location = new System.Drawing.Point(32, 385);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(67, 31);
+            this.button1.Size = new System.Drawing.Size(118, 45);
             this.button1.TabIndex = 10;
             this.button1.Text = "back";
             this.button1.UseVisualStyleBackColor = true;
@@ -168,7 +176,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1130, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.updateStock);
