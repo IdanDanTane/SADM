@@ -257,9 +257,9 @@
             this.invalid_materials.ForeColor = System.Drawing.Color.Red;
             this.invalid_materials.Location = new System.Drawing.Point(610, 405);
             this.invalid_materials.Name = "invalid_materials";
-            this.invalid_materials.Size = new System.Drawing.Size(188, 20);
+            this.invalid_materials.Size = new System.Drawing.Size(190, 20);
             this.invalid_materials.TabIndex = 27;
-            this.invalid_materials.Text = "choose al least 1 material";
+            this.invalid_materials.Text = "choose at least 1 material";
             this.invalid_materials.Click += new System.EventHandler(this.invalid_materials_Click);
             // 
             // createProduct

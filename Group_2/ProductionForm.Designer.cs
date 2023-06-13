@@ -44,6 +44,8 @@
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.create = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
+            this.invalidEnd = new System.Windows.Forms.Label();
+            this.invalid_product = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +80,7 @@
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(38, 194);
+            this.price.Location = new System.Drawing.Point(40, 238);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(44, 20);
             this.price.TabIndex = 3;
@@ -87,7 +89,7 @@
             // orderStatus
             // 
             this.orderStatus.AutoSize = true;
-            this.orderStatus.Location = new System.Drawing.Point(38, 235);
+            this.orderStatus.Location = new System.Drawing.Point(40, 279);
             this.orderStatus.Name = "orderStatus";
             this.orderStatus.Size = new System.Drawing.Size(100, 20);
             this.orderStatus.TabIndex = 4;
@@ -107,11 +109,12 @@
             this.crDate.Name = "crDate";
             this.crDate.Size = new System.Drawing.Size(200, 26);
             this.crDate.TabIndex = 6;
+            this.crDate.ValueChanged += new System.EventHandler(this.crDate_ValueChanged);
             // 
             // os
             // 
             this.os.FormattingEnabled = true;
-            this.os.Location = new System.Drawing.Point(154, 235);
+            this.os.Location = new System.Drawing.Point(156, 279);
             this.os.Name = "os";
             this.os.Size = new System.Drawing.Size(121, 28);
             this.os.TabIndex = 7;
@@ -122,13 +125,15 @@
             this.trDate.Name = "trDate";
             this.trDate.Size = new System.Drawing.Size(200, 26);
             this.trDate.TabIndex = 8;
+            this.trDate.ValueChanged += new System.EventHandler(this.trDate_ValueChanged);
             // 
             // pr
             // 
-            this.pr.Location = new System.Drawing.Point(154, 191);
+            this.pr.Location = new System.Drawing.Point(156, 235);
             this.pr.Name = "pr";
             this.pr.Size = new System.Drawing.Size(100, 26);
             this.pr.TabIndex = 9;
+            this.pr.TextChanged += new System.EventHandler(this.pr_TextChanged);
             // 
             // dataGridView1
             // 
@@ -188,11 +193,35 @@
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
+            // invalidEnd
+            // 
+            this.invalidEnd.AutoSize = true;
+            this.invalidEnd.ForeColor = System.Drawing.Color.Red;
+            this.invalidEnd.Location = new System.Drawing.Point(84, 189);
+            this.invalidEnd.Name = "invalidEnd";
+            this.invalidEnd.Size = new System.Drawing.Size(270, 20);
+            this.invalidEnd.TabIndex = 23;
+            this.invalidEnd.Text = "target date must be after create date";
+            this.invalidEnd.Click += new System.EventHandler(this.invalidEnd_Click);
+            // 
+            // invalid_product
+            // 
+            this.invalid_product.AutoSize = true;
+            this.invalid_product.ForeColor = System.Drawing.Color.Red;
+            this.invalid_product.Location = new System.Drawing.Point(410, 9);
+            this.invalid_product.Name = "invalid_product";
+            this.invalid_product.Size = new System.Drawing.Size(188, 20);
+            this.invalid_product.TabIndex = 29;
+            this.invalid_product.Text = "choose at least 1 product";
+            this.invalid_product.Click += new System.EventHandler(this.invalid_product_Click);
+            // 
             // ProductionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invalid_product);
+            this.Controls.Add(this.invalidEnd);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.create);
             this.Controls.Add(this.dataGridView1);
@@ -233,5 +262,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Required;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Label invalidEnd;
+        private System.Windows.Forms.Label invalid_product;
     }
 }

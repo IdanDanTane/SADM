@@ -186,11 +186,8 @@ namespace Group_2
             if (RecivedDate.Value.Equals(ExpDate.Value))
                 throw new Exception();
 
-            Material m = new Material(this.MATID.Text, this.MATname.Text, decimal.Parse(this.priceperton.Text), decimal.Parse(this.minthersh.Text),
-              (Mstatus)Enum.Parse(typeof(Mstatus), this.Status.Text.Replace(' ', '_')), (Warehouse)Enum.Parse(typeof(Warehouse), this.Loc.Text.Replace(' ', '_')),
-              this.RecivedDate.Value, this.ExpDate.Value, decimal.Parse(this.AmountEX.Text), false, true);
-
-            return m;
+            
+            return temp;
         }
 
 

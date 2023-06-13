@@ -20,6 +20,7 @@ namespace Group_2
             InitializeComponent();
             sqlConn = new SQL_CON();
             comboBox1.DataSource = Program.Materials;
+            button2.Enabled = false;
         }
 
         private void updateStock_ShiftManager_Load(object sender, EventArgs e)
@@ -61,5 +62,19 @@ namespace Group_2
             h.Show();
             this.Hide();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (!(string.IsNullOrWhiteSpace(textBox1.Text)))
+            {
+                if (!(Program.IsValidNumbers(textBox1.Text)))
+                    button2.Enabled = false;
+                else
+                    button2.Enabled = true;
+            }
+            else
+                button2.Enabled = false;
+        }
     }
+    
 }
