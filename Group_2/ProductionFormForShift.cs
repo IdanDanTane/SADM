@@ -92,5 +92,10 @@ namespace Group_2
                 dataGridView2.Rows.Add(m.Id, Program.seekProduct(comboBox1.Text.ToString()).componenets[m] * temp.toProduce[Program.seekProduct(comboBox1.Text.ToString())]);
             }
         }
+
+        private void pr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

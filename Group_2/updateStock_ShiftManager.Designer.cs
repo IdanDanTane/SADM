@@ -1,4 +1,6 @@
-﻿namespace Group_2
+﻿using System;
+
+namespace Group_2
 {
     partial class updateStock_ShiftManager
     {
@@ -169,5 +171,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private EventHandler label1_Click;
     }
 }

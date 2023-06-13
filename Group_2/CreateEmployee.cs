@@ -189,15 +189,17 @@ namespace Group_2
 
         }
 
-        private void invalid_ID_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void invalidBD_Click(object sender, EventArgs e)
         {
             
 
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            //invalid_ID
         }
     }
 }
