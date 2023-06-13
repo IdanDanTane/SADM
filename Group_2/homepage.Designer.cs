@@ -39,7 +39,6 @@
             this.EndshiftReport = new System.Windows.Forms.Button();
             this.updateStock = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +74,7 @@
             // 
             // products
             // 
-            this.products.Location = new System.Drawing.Point(533, 86);
+            this.products.Location = new System.Drawing.Point(480, 86);
             this.products.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.products.Name = "products";
             this.products.Size = new System.Drawing.Size(104, 38);
@@ -86,7 +85,7 @@
             // 
             // materials
             // 
-            this.materials.Location = new System.Drawing.Point(542, 172);
+            this.materials.Location = new System.Drawing.Point(480, 163);
             this.materials.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.materials.Name = "materials";
             this.materials.Size = new System.Drawing.Size(94, 34);
@@ -104,6 +103,7 @@
             this.forecast.TabIndex = 5;
             this.forecast.Text = "create forecast";
             this.forecast.UseVisualStyleBackColor = true;
+            this.forecast.Click += new System.EventHandler(this.forecast_Click);
             // 
             // incomeReport
             // 
@@ -129,7 +129,7 @@
             // 
             // EndshiftReport
             // 
-            this.EndshiftReport.Location = new System.Drawing.Point(533, 231);
+            this.EndshiftReport.Location = new System.Drawing.Point(480, 231);
             this.EndshiftReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EndshiftReport.Name = "EndshiftReport";
             this.EndshiftReport.Size = new System.Drawing.Size(172, 96);
@@ -159,22 +159,11 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(37, 326);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(268, 58);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "production for shift";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1130, 450);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.updateStock);
             this.Controls.Add(this.EndshiftReport);
@@ -207,6 +196,5 @@
         private System.Windows.Forms.Button EndshiftReport;
         private System.Windows.Forms.Button updateStock;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }

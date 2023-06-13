@@ -84,7 +84,7 @@ namespace Group_2
 
             while (rdr.Read())
             {
-                Shift s = new Shift((int)rdr.GetValue(0), (DateTime)rdr.GetValue(1), false);
+                Shift s = new Shift( (DateTime)rdr.GetValue(1), false);
                 Shifts.Add(s);
             }
         }
@@ -181,7 +181,7 @@ namespace Group_2
             while (rdr.Read())
             {
 
-                ShiftReport SR = new ShiftReport(rdr.GetValue(0).ToString(), false);
+                ShiftReport SR = new ShiftReport(int.Parse(rdr.GetValue(0).ToString()), false);
                 ShiftReports.Add(SR);
             }
         }
