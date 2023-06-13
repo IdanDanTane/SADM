@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductionForm));
             this.ID = new System.Windows.Forms.Label();
             this.createDate = new System.Windows.Forms.Label();
             this.targetDate = new System.Windows.Forms.Label();
@@ -50,18 +51,20 @@
             // ID
             // 
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(38, 48);
+            this.ID.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ID.Location = new System.Drawing.Point(348, 160);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(26, 20);
+            this.ID.Size = new System.Drawing.Size(33, 23);
             this.ID.TabIndex = 0;
             this.ID.Text = "ID";
             // 
             // createDate
             // 
             this.createDate.AutoSize = true;
-            this.createDate.Location = new System.Drawing.Point(38, 105);
+            this.createDate.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.createDate.Location = new System.Drawing.Point(278, 235);
             this.createDate.Name = "createDate";
-            this.createDate.Size = new System.Drawing.Size(96, 20);
+            this.createDate.Size = new System.Drawing.Size(138, 23);
             this.createDate.TabIndex = 1;
             this.createDate.Text = "Create Date";
             this.createDate.Click += new System.EventHandler(this.label2_Click);
@@ -69,65 +72,73 @@
             // targetDate
             // 
             this.targetDate.AutoSize = true;
-            this.targetDate.Location = new System.Drawing.Point(40, 151);
+            this.targetDate.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.targetDate.Location = new System.Drawing.Point(290, 315);
             this.targetDate.Name = "targetDate";
-            this.targetDate.Size = new System.Drawing.Size(94, 20);
+            this.targetDate.Size = new System.Drawing.Size(136, 23);
             this.targetDate.TabIndex = 2;
             this.targetDate.Text = "Target Date";
             // 
             // price
             // 
             this.price.AutoSize = true;
-            this.price.Location = new System.Drawing.Point(38, 194);
+            this.price.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.price.Location = new System.Drawing.Point(336, 378);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(44, 20);
+            this.price.Size = new System.Drawing.Size(62, 23);
             this.price.TabIndex = 3;
             this.price.Text = "Price";
             // 
             // orderStatus
             // 
             this.orderStatus.AutoSize = true;
-            this.orderStatus.Location = new System.Drawing.Point(38, 235);
+            this.orderStatus.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.orderStatus.Location = new System.Drawing.Point(290, 441);
             this.orderStatus.Name = "orderStatus";
-            this.orderStatus.Size = new System.Drawing.Size(100, 20);
+            this.orderStatus.Size = new System.Drawing.Size(147, 23);
             this.orderStatus.TabIndex = 4;
             this.orderStatus.Text = "Order Status";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 42);
+            this.textBox1.Location = new System.Drawing.Point(476, 161);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.Size = new System.Drawing.Size(178, 22);
             this.textBox1.TabIndex = 5;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // crDate
             // 
-            this.crDate.Location = new System.Drawing.Point(154, 105);
+            this.crDate.Location = new System.Drawing.Point(476, 236);
+            this.crDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.crDate.Name = "crDate";
-            this.crDate.Size = new System.Drawing.Size(200, 26);
+            this.crDate.Size = new System.Drawing.Size(178, 22);
             this.crDate.TabIndex = 6;
             // 
             // os
             // 
             this.os.FormattingEnabled = true;
-            this.os.Location = new System.Drawing.Point(154, 235);
+            this.os.Location = new System.Drawing.Point(476, 442);
+            this.os.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.os.Name = "os";
-            this.os.Size = new System.Drawing.Size(121, 28);
+            this.os.Size = new System.Drawing.Size(178, 24);
             this.os.TabIndex = 7;
             // 
             // trDate
             // 
-            this.trDate.Location = new System.Drawing.Point(154, 151);
+            this.trDate.Location = new System.Drawing.Point(476, 314);
+            this.trDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trDate.Name = "trDate";
-            this.trDate.Size = new System.Drawing.Size(200, 26);
+            this.trDate.Size = new System.Drawing.Size(178, 22);
             this.trDate.TabIndex = 8;
             // 
             // pr
             // 
-            this.pr.Location = new System.Drawing.Point(154, 191);
+            this.pr.Location = new System.Drawing.Point(476, 378);
+            this.pr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pr.Name = "pr";
-            this.pr.Size = new System.Drawing.Size(100, 26);
+            this.pr.Size = new System.Drawing.Size(178, 22);
             this.pr.TabIndex = 9;
             // 
             // dataGridView1
@@ -139,11 +150,12 @@
             this.Required,
             this.Product,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(374, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(694, 51);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(404, 382);
+            this.dataGridView1.Size = new System.Drawing.Size(445, 335);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -170,9 +182,11 @@
             // 
             // create
             // 
-            this.create.Location = new System.Drawing.Point(216, 377);
+            this.create.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.create.Location = new System.Drawing.Point(592, 557);
+            this.create.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.create.Name = "create";
-            this.create.Size = new System.Drawing.Size(104, 61);
+            this.create.Size = new System.Drawing.Size(200, 50);
             this.create.TabIndex = 11;
             this.create.Text = "Create Form";
             this.create.UseVisualStyleBackColor = true;
@@ -180,9 +194,11 @@
             // 
             // Back
             // 
-            this.Back.Location = new System.Drawing.Point(44, 377);
+            this.Back.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Back.Location = new System.Drawing.Point(27, 582);
+            this.Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(104, 61);
+            this.Back.Size = new System.Drawing.Size(120, 50);
             this.Back.TabIndex = 12;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -190,9 +206,11 @@
             // 
             // ProductionForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1282, 653);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.create);
             this.Controls.Add(this.dataGridView1);
@@ -206,7 +224,9 @@
             this.Controls.Add(this.targetDate);
             this.Controls.Add(this.createDate);
             this.Controls.Add(this.ID);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ProductionForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProductionForm";
             this.Load += new System.EventHandler(this.ProductionForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

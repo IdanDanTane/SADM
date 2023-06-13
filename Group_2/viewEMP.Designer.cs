@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewEMP));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sADM_2DataSet2 = new Group_2.SADM_2DataSet2();
-            this.getallemployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.get_all_employeesTableAdapter = new Group_2.SADM_2DataSet2TableAdapters.Get_all_employeesTableAdapter();
             this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,10 +38,13 @@
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getallemployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sADM_2DataSet2 = new Group_2.SADM_2DataSet2();
+            this.get_all_employeesTableAdapter = new Group_2.SADM_2DataSet2TableAdapters.Get_all_employeesTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sADM_2DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.getallemployeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sADM_2DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -61,28 +62,15 @@
             this.birthDateDataGridViewTextBoxColumn,
             this.typeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.getallemployeesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(45, 96);
+            this.dataGridView1.Location = new System.Drawing.Point(101, 149);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1118, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(1115, 214);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // sADM_2DataSet2
-            // 
-            this.sADM_2DataSet2.DataSetName = "SADM_2DataSet2";
-            this.sADM_2DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // getallemployeesBindingSource
-            // 
-            this.getallemployeesBindingSource.DataMember = "Get_all_employees";
-            this.getallemployeesBindingSource.DataSource = this.sADM_2DataSet2;
-            // 
-            // get_all_employeesTableAdapter
-            // 
-            this.get_all_employeesTableAdapter.ClearBeforeFill = true;
             // 
             // employeeIdDataGridViewTextBoxColumn
             // 
@@ -147,11 +135,27 @@
             this.typeDataGridViewTextBoxColumn.ReadOnly = true;
             this.typeDataGridViewTextBoxColumn.Width = 150;
             // 
+            // getallemployeesBindingSource
+            // 
+            this.getallemployeesBindingSource.DataMember = "Get_all_employees";
+            this.getallemployeesBindingSource.DataSource = this.sADM_2DataSet2;
+            // 
+            // sADM_2DataSet2
+            // 
+            this.sADM_2DataSet2.DataSetName = "SADM_2DataSet2";
+            this.sADM_2DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // get_all_employeesTableAdapter
+            // 
+            this.get_all_employeesTableAdapter.ClearBeforeFill = true;
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(504, 412);
+            this.button1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.Location = new System.Drawing.Point(30, 583);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
+            this.button1.Size = new System.Drawing.Size(120, 50);
             this.button1.TabIndex = 1;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
@@ -159,17 +163,21 @@
             // 
             // viewEMP
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1282, 653);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewEMP";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "viewEMP";
             this.Load += new System.EventHandler(this.viewEMP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sADM_2DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.getallemployeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sADM_2DataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
