@@ -24,7 +24,7 @@ namespace Group_2
             {
                 showFoodTechnologistButtons();
             }
-            if (GetLoggedUserType().Equals("Shift_manage"))
+            if (GetLoggedUserType().Equals("Shift_manager"))
             {
                 showShiftManagerButtons();
             }
@@ -172,6 +172,7 @@ namespace Group_2
 
             }
 
+
             if (GetLoggedUserType().Equals("Warehouse_manager"))
             {
                 updateStock_CEO updateStockForm = new updateStock_CEO();
@@ -239,6 +240,7 @@ namespace Group_2
 
             }
 
+            }
         }
     }
-}
+

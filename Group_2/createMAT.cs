@@ -38,8 +38,17 @@ namespace Group_2
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           
+            if (!(string.IsNullOrWhiteSpace(MATID.Text)))
+            {
+                if (!(Program.IsValidMatID(MATID.Text)))
+                    invalid_matID.Show();
+                else
+                    invalid_matID.Hide();
+            }
+            else
+                invalid_matID.Show();
         }
+    
 
         private void search_Employee_Click(object sender, EventArgs e)
         {
@@ -83,25 +92,80 @@ namespace Group_2
 
         }
 
-        private void deleteEMP_Click(object sender, EventArgs e)
-        {
-           
-
-        }
+    
 
         private void UpdateEMP_Click(object sender, EventArgs e)
         {
-            Material m = new Material(this.MATID.Text, this.MATname.Text, decimal.Parse(this.priceperton.Text), decimal.Parse(this.minthersh.Text),
-                (Mstatus)Enum.Parse(typeof(Mstatus), this.Status.Text.Replace(' ', '_')), (Warehouse)Enum.Parse(typeof(Warehouse), this.Loc.Text.Replace(' ', '_')),
-                this.RecivedDate.Value, this.ExpDate.Value, decimal.Parse(this.AmountEX.Text),false ,true);
+            // create material 
+
+            try
+            {
+                Material ma = this.createMaterial();
+
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("could not update the material, plese try again");
+
+            }
         }
 
+        private Material createMaterial()
+        {
+            if (string.IsNullOrWhiteSpace(MATID.Text) || string.IsNullOrWhiteSpace(MATname.Text) || string.IsNullOrWhiteSpace(priceperton.Text) || string.IsNullOrWhiteSpace(minthersh.Text) || string.IsNullOrWhiteSpace(AmountEX.Text))
+                throw new Exception(); // One or more of the textboxes are empty or contain only whitespace
+
+            if (((!(Program.IsValidMatID(MATID.Text))) || (!(Program.IsValidNumbers(priceperton.Text))) || (!(Program.IsValidNumbers(minthersh.Text)) || (!(Program.IsValidNumbers(AmountEX.Text))))))
+                throw new Exception(); // One or more of the textboxes are not valid
+
+            if (RecivedDate.Value > ExpDate.Value)
+                throw new Exception();
+
+            if (RecivedDate.Value.Equals(ExpDate.Value))
+                throw new Exception();
+
+            Material m = new Material(this.MATID.Text, this.MATname.Text, decimal.Parse(this.priceperton.Text), decimal.Parse(this.minthersh.Text),
+              (Mstatus)Enum.Parse(typeof(Mstatus), this.Status.Text.Replace(' ', '_')), (Warehouse)Enum.Parse(typeof(Warehouse), this.Loc.Text.Replace(' ', '_')),
+              this.RecivedDate.Value, this.ExpDate.Value, decimal.Parse(this.AmountEX.Text), false, true);
+            
+            return m;
+    }
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            ExpDate.CustomFormat = "yyyy-MM-dd";
+
+            if (RecivedDate.Value > ExpDate.Value)
+                invalid_ExpDate.Show();
+            else
+                invalid_ExpDate.Hide();
+
+
+            if (RecivedDate.Value.Equals(ExpDate.Value))
+               invalid_ExpDate.Show();
+            else
+               invalid_ExpDate.Hide();
+
+            
+        }
+
+        private void Status_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void Status_SelectedIndexChanged(object sender, EventArgs e)
+        private void invalid_matID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void invalid_ExpDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AmountEX_TextChanged(object sender, EventArgs e)
         {
 
         }

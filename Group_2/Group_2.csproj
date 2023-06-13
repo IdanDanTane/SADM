@@ -183,14 +183,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-
     <Compile Include="ProductionFormForCEO.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductionFormForCEO.Designer.cs">
       <DependentUpon>ProductionFormForCEO.cs</DependentUpon>
     </Compile>
-
     <Compile Include="CreateForecast.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,7 +196,6 @@
       <DependentUpon>CreateForecast.cs</DependentUpon>
     </Compile>
     <Compile Include="Forecast.cs" />
-
     <Compile Include="ProductionFormForShift.cs">
       <SubType>Form</SubType>
     </Compile>

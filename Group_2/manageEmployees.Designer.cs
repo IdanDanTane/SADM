@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(manageEmployees));
             this.button1 = new System.Windows.Forms.Button();
             this.addEMP = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -37,9 +38,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(135, 109);
+            this.button1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.Location = new System.Drawing.Point(458, 223);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 51);
+            this.button1.Size = new System.Drawing.Size(200, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "view employees";
             this.button1.UseVisualStyleBackColor = true;
@@ -47,9 +50,11 @@
             // 
             // addEMP
             // 
-            this.addEMP.Location = new System.Drawing.Point(419, 109);
+            this.addEMP.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.addEMP.Location = new System.Drawing.Point(720, 223);
+            this.addEMP.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.addEMP.Name = "addEMP";
-            this.addEMP.Size = new System.Drawing.Size(188, 51);
+            this.addEMP.Size = new System.Drawing.Size(200, 50);
             this.addEMP.TabIndex = 1;
             this.addEMP.Text = "create employee";
             this.addEMP.UseVisualStyleBackColor = true;
@@ -57,9 +62,11 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(278, 210);
+            this.button3.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button3.Location = new System.Drawing.Point(586, 313);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(193, 54);
+            this.button3.Size = new System.Drawing.Size(200, 50);
             this.button3.TabIndex = 2;
             this.button3.Text = "search Employee";
             this.button3.UseVisualStyleBackColor = true;
@@ -68,18 +75,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(312, 30);
+            this.label1.Font = new System.Drawing.Font("Aharoni", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(519, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 20);
+            this.label1.Size = new System.Drawing.Size(330, 34);
             this.label1.TabIndex = 4;
             this.label1.Text = "manage employees";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(316, 364);
+            this.button2.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button2.Location = new System.Drawing.Point(26, 579);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 48);
+            this.button2.Size = new System.Drawing.Size(120, 50);
             this.button2.TabIndex = 5;
             this.button2.Text = "Back";
             this.button2.UseVisualStyleBackColor = true;
@@ -87,15 +97,19 @@
             // 
             // manageEmployees
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1282, 653);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.addEMP);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "manageEmployees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "manage employees";
             this.ResumeLayout(false);
             this.PerformLayout();
