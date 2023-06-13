@@ -44,6 +44,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+
             this.comboBox1.Location = new System.Drawing.Point(605, 301);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(130, 24);
@@ -52,20 +53,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
+
             this.label1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.Location = new System.Drawing.Point(456, 300);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 23);
+
             this.label1.TabIndex = 6;
             this.label1.Text = "Material";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
+
             this.textBox1.Location = new System.Drawing.Point(605, 191);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 22);
+            this.textBox1.Size = new System.Drawing.Size(146, 26);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -130,11 +135,12 @@
             // 
             // updateStock_ShiftManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1282, 653);
+
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
@@ -142,6 +148,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "updateStock_ShiftManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "updateStock_ShiftManager";

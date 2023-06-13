@@ -116,7 +116,7 @@ namespace Group_2
         {
             employeeBirthDate.CustomFormat = "yyyy-MM-dd";
 
-            if (employeeBirthDate.Value > DateTime.Today)
+            if (employeeBirthDate.Value < DateTime.Today)
                 invalidBD.Show();
             else
                 invalidBD.Hide();
@@ -217,14 +217,12 @@ namespace Group_2
             if (((!(Program.IsValidID(EmployeeID.Text))) || (!(Program.IsValidPhone(EmployeePhone.Text))) || (!(Program.IsValidEmail(EmployeeEmail.Text)))))
                 throw new Exception(); // One or more of the textboxes are not valid
 
-            if (employeeBirthDate.Value > DateTime.Today)
+            if (employeeBirthDate.Value < DateTime.Today)
                 throw new Exception();
 
             if (employeeBirthDate.Value.Equals(DateTime.Today))
                 throw new Exception();
-
-            Employee E = new Employee(EmployeeID.Text, EmployeePhone.Text, EmployeeEmail.Text, EmployeeFirstName.Text, EmployeeLastName.Text, employeeBirthDate.Value, (employeeType)Enum.Parse(typeof(employeeType), EmployeeType_choose.Text.Replace(' ', '_')), true, true);
-            return E;
+                 return temp;
 
         }
 

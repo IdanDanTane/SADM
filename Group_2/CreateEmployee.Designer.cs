@@ -253,7 +253,7 @@
             // 
             this.invalidBD.AutoSize = true;
             this.invalidBD.ForeColor = System.Drawing.Color.Red;
-            this.invalidBD.Location = new System.Drawing.Point(599, 238);
+            this.invalidBD.Location = new System.Drawing.Point(573, 237);
             this.invalidBD.Name = "invalidBD";
             this.invalidBD.Size = new System.Drawing.Size(259, 20);
             this.invalidBD.TabIndex = 20;

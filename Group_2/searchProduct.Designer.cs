@@ -91,6 +91,7 @@
             this.pricePerTon.Name = "pricePerTon";
             this.pricePerTon.Size = new System.Drawing.Size(199, 22);
             this.pricePerTon.TabIndex = 23;
+            this.pricePerTon.TextChanged += new System.EventHandler(this.pricePerTon_TextChanged);
             // 
             // productName
             // 
