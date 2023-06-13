@@ -57,27 +57,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 145);
+            this.label1.Location = new System.Drawing.Point(135, 181);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 16);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 0;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(120, 186);
+            this.label2.Location = new System.Drawing.Point(135, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 16);
+            this.label2.Size = new System.Drawing.Size(0, 20);
             this.label2.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(359, 270);
+            this.label3.Location = new System.Drawing.Point(404, 338);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 23);
+            this.label3.Size = new System.Drawing.Size(173, 28);
             this.label3.TabIndex = 2;
             this.label3.Text = "Product ID : ";
             // 
@@ -85,9 +85,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(345, 330);
+            this.label4.Location = new System.Drawing.Point(388, 412);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 23);
+            this.label4.Size = new System.Drawing.Size(211, 28);
             this.label4.TabIndex = 3;
             this.label4.Text = "Product name :";
             // 
@@ -95,9 +95,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.Location = new System.Drawing.Point(329, 396);
+            this.label5.Location = new System.Drawing.Point(370, 495);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 23);
+            this.label5.Size = new System.Drawing.Size(231, 28);
             this.label5.TabIndex = 4;
             this.label5.Text = "Expiration date :";
             // 
@@ -105,18 +105,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(359, 458);
+            this.label6.Location = new System.Drawing.Point(404, 572);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(158, 23);
+            this.label6.Size = new System.Drawing.Size(196, 28);
             this.label6.TabIndex = 5;
             this.label6.Text = "Price per ton :";
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button1.Location = new System.Drawing.Point(576, 541);
+            this.button1.Location = new System.Drawing.Point(648, 676);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 50);
+            this.button1.Size = new System.Drawing.Size(225, 62);
             this.button1.TabIndex = 6;
             this.button1.Text = "Create product";
             this.button1.UseVisualStyleBackColor = true;
@@ -124,34 +125,38 @@
             // 
             // productID
             // 
-            this.productID.Location = new System.Drawing.Point(576, 270);
+            this.productID.Location = new System.Drawing.Point(648, 338);
+            this.productID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productID.Name = "productID";
-            this.productID.Size = new System.Drawing.Size(171, 22);
+            this.productID.Size = new System.Drawing.Size(192, 26);
             this.productID.TabIndex = 7;
             this.productID.TextChanged += new System.EventHandler(this.productID_TextChanged);
             // 
             // productName
             // 
-            this.productName.Location = new System.Drawing.Point(576, 330);
+            this.productName.Location = new System.Drawing.Point(648, 412);
+            this.productName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.productName.Name = "productName";
-            this.productName.Size = new System.Drawing.Size(171, 22);
+            this.productName.Size = new System.Drawing.Size(192, 26);
             this.productName.TabIndex = 8;
             this.productName.TextChanged += new System.EventHandler(this.productName_TextChanged);
             // 
             // pricePerTon
             // 
-            this.pricePerTon.Location = new System.Drawing.Point(576, 459);
+            this.pricePerTon.Location = new System.Drawing.Point(648, 574);
+            this.pricePerTon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pricePerTon.Name = "pricePerTon";
-            this.pricePerTon.Size = new System.Drawing.Size(171, 22);
+            this.pricePerTon.Size = new System.Drawing.Size(192, 26);
             this.pricePerTon.TabIndex = 10;
             // 
             // expirationDate
             // 
             this.expirationDate.CustomFormat = "yyyy-MM-dd";
             this.expirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.expirationDate.Location = new System.Drawing.Point(576, 395);
+            this.expirationDate.Location = new System.Drawing.Point(648, 494);
+            this.expirationDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.expirationDate.Name = "expirationDate";
-            this.expirationDate.Size = new System.Drawing.Size(171, 22);
+            this.expirationDate.Size = new System.Drawing.Size(192, 26);
             this.expirationDate.TabIndex = 11;
             this.expirationDate.ValueChanged += new System.EventHandler(this.expirationDate_ValueChanged);
             // 
@@ -159,18 +164,19 @@
             // 
             this.ProductType.AutoSize = true;
             this.ProductType.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ProductType.Location = new System.Drawing.Point(357, 208);
+            this.ProductType.Location = new System.Drawing.Point(402, 260);
             this.ProductType.Name = "ProductType";
-            this.ProductType.Size = new System.Drawing.Size(160, 23);
+            this.ProductType.Size = new System.Drawing.Size(196, 28);
             this.ProductType.TabIndex = 12;
             this.ProductType.Text = "Product type :";
             // 
             // Type
             // 
             this.Type.FormattingEnabled = true;
-            this.Type.Location = new System.Drawing.Point(576, 209);
+            this.Type.Location = new System.Drawing.Point(648, 261);
+            this.Type.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(171, 24);
+            this.Type.Size = new System.Drawing.Size(192, 28);
             this.Type.TabIndex = 13;
             this.Type.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
             // 
@@ -178,19 +184,19 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(964, 29);
+            this.label8.Location = new System.Drawing.Point(1084, 36);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(129, 23);
+            this.label8.Size = new System.Drawing.Size(162, 28);
             this.label8.TabIndex = 15;
             this.label8.Text = "Materials  :";
             // 
             // Back
             // 
             this.Back.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Back.Location = new System.Drawing.Point(31, 578);
+            this.Back.Location = new System.Drawing.Point(35, 722);
             this.Back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(120, 50);
+            this.Back.Size = new System.Drawing.Size(135, 62);
             this.Back.TabIndex = 17;
             this.Back.Text = "Back";
             this.Back.UseVisualStyleBackColor = true;
@@ -203,12 +209,12 @@
             this.needed,
             this.Material_ID,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(842, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(947, 86);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(363, 284);
+            this.dataGridView1.Size = new System.Drawing.Size(408, 355);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
@@ -238,44 +244,42 @@
             // 
             this.invalid_ProdID.AutoSize = true;
             this.invalid_ProdID.ForeColor = System.Drawing.Color.Red;
-            this.invalid_ProdID.Location = new System.Drawing.Point(194, 232);
+            this.invalid_ProdID.Location = new System.Drawing.Point(640, 368);
             this.invalid_ProdID.Name = "invalid_ProdID";
-            this.invalid_ProdID.Size = new System.Drawing.Size(243, 20);
+            this.invalid_ProdID.Size = new System.Drawing.Size(233, 20);
             this.invalid_ProdID.TabIndex = 25;
-            this.invalid_ProdID.Text = "Product ID format: \" P *number* \"";
-            this.invalid_ProdID.Click += new System.EventHandler(this.invalid_ProdID_Click);
+            this.invalid_ProdID.Text = "Product ID format: \\\" P number \\";
             // 
             // invalid_ExpDate
             // 
             this.invalid_ExpDate.AutoSize = true;
             this.invalid_ExpDate.ForeColor = System.Drawing.Color.Red;
-            this.invalid_ExpDate.Location = new System.Drawing.Point(203, 364);
+            this.invalid_ExpDate.Location = new System.Drawing.Point(644, 524);
             this.invalid_ExpDate.Name = "invalid_ExpDate";
             this.invalid_ExpDate.Size = new System.Drawing.Size(213, 20);
             this.invalid_ExpDate.TabIndex = 26;
             this.invalid_ExpDate.Text = "Exp date must be after today";
-            this.invalid_ExpDate.Click += new System.EventHandler(this.invalid_ExpDate_Click);
             // 
             // invalid_materials
             // 
             this.invalid_materials.AutoSize = true;
             this.invalid_materials.ForeColor = System.Drawing.Color.Red;
-            this.invalid_materials.Location = new System.Drawing.Point(610, 405);
+            this.invalid_materials.Location = new System.Drawing.Point(1025, 457);
             this.invalid_materials.Name = "invalid_materials";
-            this.invalid_materials.Size = new System.Drawing.Size(188, 20);
+            this.invalid_materials.Size = new System.Drawing.Size(190, 20);
             this.invalid_materials.TabIndex = 27;
-            this.invalid_materials.Text = "choose al least 1 material";
-            this.invalid_materials.Click += new System.EventHandler(this.invalid_materials_Click);
+            this.invalid_materials.Text = "choose at least 1 material";
             // 
             // createProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1282, 653);
-
+            this.ClientSize = new System.Drawing.Size(1442, 816);
+            this.Controls.Add(this.invalid_materials);
+            this.Controls.Add(this.invalid_ExpDate);
+            this.Controls.Add(this.invalid_ProdID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.label8);
@@ -292,6 +296,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "createProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create product";
@@ -326,5 +331,5 @@
         private System.Windows.Forms.Label invalid_ProdID;
         private System.Windows.Forms.Label invalid_ExpDate;
         private System.Windows.Forms.Label invalid_materials;
-    }
+        }
 }

@@ -168,15 +168,8 @@ namespace Group_2
                 throw new Exception();
 
 
-            Product P = new Product(
-              this.productID.Text,
-              this.productName.Text,
-              this.expirationDate.Value,
-              decimal.Parse(this.pricePerTon.Text),
-              (ProductType)Enum.Parse(typeof(ProductType), Type.Text.Replace(' ', '_')), false, true
-
-          );
-            return P;
+           
+            return temp;
 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -190,6 +183,11 @@ namespace Group_2
             {
                 dataGridView1.Rows.Add(false, m.Id, 0);
             }
+        }
+
+        private void pricePerTon_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

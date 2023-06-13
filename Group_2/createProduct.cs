@@ -116,10 +116,7 @@ namespace Group_2
 
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void expirationDate_ValueChanged(object sender, EventArgs e)
         {
@@ -164,16 +161,8 @@ namespace Group_2
                 invalid_materials.Hide();
         }
 
-        private void invalid_ProdID_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void invalid_ExpDate_Click(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void productID_TextChanged(object sender, EventArgs e)
         {
             if (!(string.IsNullOrWhiteSpace(productID.Text)))

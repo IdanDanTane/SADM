@@ -129,8 +129,7 @@ namespace Group_2
             if (((!(Program.IsValidZipCode(textBox3.Text))) || (!(Program.IsValidPhone(textBox4.Text)))))
                 throw new Exception(); // One or more of the textboxes are not valid
 
-            Customer C = new Customer(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, true, true);
-            return C;
+            return temp;
         }
 
 
