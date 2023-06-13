@@ -63,6 +63,7 @@ namespace Group_2
             this.Hide();
         }
 
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (!(string.IsNullOrWhiteSpace(textBox1.Text)))
@@ -74,6 +75,7 @@ namespace Group_2
             }
             else
                 button2.Enabled = false;
+
         }
     }
     

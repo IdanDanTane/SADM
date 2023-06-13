@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewMAT));
             this.getallemployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sADM_2DataSet2 = new Group_2.SADM_2DataSet2();
             this.get_all_employeesTableAdapter = new Group_2.SADM_2DataSet2TableAdapters.Get_all_employeesTableAdapter();
@@ -55,9 +56,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(504, 412);
+            this.button1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.button1.Location = new System.Drawing.Point(35, 583);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
+            this.button1.Size = new System.Drawing.Size(120, 50);
             this.button1.TabIndex = 1;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
@@ -68,23 +71,28 @@
             this.viewMAT2.AllowUserToAddRows = false;
             this.viewMAT2.AllowUserToDeleteRows = false;
             this.viewMAT2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewMAT2.Location = new System.Drawing.Point(47, 43);
+            this.viewMAT2.Location = new System.Drawing.Point(129, 92);
+            this.viewMAT2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewMAT2.Name = "viewMAT2";
             this.viewMAT2.ReadOnly = true;
             this.viewMAT2.RowHeadersWidth = 62;
             this.viewMAT2.RowTemplate.Height = 28;
-            this.viewMAT2.Size = new System.Drawing.Size(1137, 351);
+            this.viewMAT2.Size = new System.Drawing.Size(1011, 281);
             this.viewMAT2.TabIndex = 2;
             this.viewMAT2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // viewMAT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1282, 653);
             this.Controls.Add(this.viewMAT2);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "viewMAT";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "view Materials";
             this.Load += new System.EventHandler(this.ViewMAT2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.getallemployeesBindingSource)).EndInit();
