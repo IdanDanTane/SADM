@@ -47,6 +47,9 @@
             this.needed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Material_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invalid_ProdID = new System.Windows.Forms.Label();
+            this.invalid_ExpDate = new System.Windows.Forms.Label();
+            this.invalid_materials = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,6 +124,7 @@
             this.productID.Name = "productID";
             this.productID.Size = new System.Drawing.Size(140, 26);
             this.productID.TabIndex = 7;
+            this.productID.TextChanged += new System.EventHandler(this.productID_TextChanged);
             // 
             // productName
             // 
@@ -225,11 +229,47 @@
             this.Amount.Name = "Amount";
             this.Amount.Width = 150;
             // 
+            // invalid_ProdID
+            // 
+            this.invalid_ProdID.AutoSize = true;
+            this.invalid_ProdID.ForeColor = System.Drawing.Color.Red;
+            this.invalid_ProdID.Location = new System.Drawing.Point(194, 232);
+            this.invalid_ProdID.Name = "invalid_ProdID";
+            this.invalid_ProdID.Size = new System.Drawing.Size(243, 20);
+            this.invalid_ProdID.TabIndex = 25;
+            this.invalid_ProdID.Text = "Product ID format: \" P *number* \"";
+            this.invalid_ProdID.Click += new System.EventHandler(this.invalid_ProdID_Click);
+            // 
+            // invalid_ExpDate
+            // 
+            this.invalid_ExpDate.AutoSize = true;
+            this.invalid_ExpDate.ForeColor = System.Drawing.Color.Red;
+            this.invalid_ExpDate.Location = new System.Drawing.Point(203, 364);
+            this.invalid_ExpDate.Name = "invalid_ExpDate";
+            this.invalid_ExpDate.Size = new System.Drawing.Size(213, 20);
+            this.invalid_ExpDate.TabIndex = 26;
+            this.invalid_ExpDate.Text = "Exp date must be after today";
+            this.invalid_ExpDate.Click += new System.EventHandler(this.invalid_ExpDate_Click);
+            // 
+            // invalid_materials
+            // 
+            this.invalid_materials.AutoSize = true;
+            this.invalid_materials.ForeColor = System.Drawing.Color.Red;
+            this.invalid_materials.Location = new System.Drawing.Point(610, 405);
+            this.invalid_materials.Name = "invalid_materials";
+            this.invalid_materials.Size = new System.Drawing.Size(188, 20);
+            this.invalid_materials.TabIndex = 27;
+            this.invalid_materials.Text = "choose al least 1 material";
+            this.invalid_materials.Click += new System.EventHandler(this.invalid_materials_Click);
+            // 
             // createProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.invalid_materials);
+            this.Controls.Add(this.invalid_ExpDate);
+            this.Controls.Add(this.invalid_ProdID);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.label8);
@@ -277,5 +317,8 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn needed;
         private System.Windows.Forms.DataGridViewTextBoxColumn Material_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Label invalid_ProdID;
+        private System.Windows.Forms.Label invalid_ExpDate;
+        private System.Windows.Forms.Label invalid_materials;
     }
 }

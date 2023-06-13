@@ -134,37 +134,86 @@ namespace Group_2
         }
 
         private void UpdateEMP_Click(object sender, EventArgs e)
-        { 
-            SQL_CON SC = new SQL_CON();
-            SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[UpdateMaterial] @MaterialID ,@Name ,@PricePerTone ,@MinimumThreshold ,@Status ,@warehouse ,@ReceivedDate ,@ExpirationDate ,@Amount", SC.getConnection());
-            r.SelectCommand.Parameters.AddWithValue("@MaterialID", temp.Id);
-            r.SelectCommand.Parameters.AddWithValue("@Name", this.MATname.Text);
-            r.SelectCommand.Parameters.AddWithValue("@PricePerTone", this.priceperton.Text);
-            r.SelectCommand.Parameters.AddWithValue("@MinimumThreshold", this.minthersh.Text);
-            r.SelectCommand.Parameters.AddWithValue("@Status", this.Status.Text);
-            r.SelectCommand.Parameters.AddWithValue("@warehouse", this.Loc.Text);
-            string newDateTime = this.RecivedDate.Value.ToString("yyyy-MM-dd");
-            r.SelectCommand.Parameters.AddWithValue("@ReceivedDate", newDateTime);
-            newDateTime = this.ExpDate.Value.ToString("yyyy-MM-dd");
-            r.SelectCommand.Parameters.AddWithValue("@ExpirationDate", newDateTime);
-            r.SelectCommand.Parameters.AddWithValue("@Amount", this.AmountEX.Text);
-            SC.Execute_non_query(r);
-            temp.pricePerTon = decimal.Parse(this.priceperton.Text);  
-            temp.minimumThreshold = decimal.Parse(this.minthersh.Text); 
-            temp.Status = (Mstatus)Enum.Parse(typeof(Mstatus), this.Status.Text.Replace(' ', '_'));
-            temp.Name = this.MATname.Text;
-            temp.recivedDate = this.RecivedDate.Value;
-            temp.expirationDate = this.ExpDate.Value;
-            temp.amount= decimal.Parse(this.AmountEX.Text);
-            temp.Location = (Warehouse)Enum.Parse(typeof(Warehouse), this.Loc.Text.Replace(' ','_'));
+        {
+            // update material 
+
+            try
+            {
+                Material ma = this.updateMaterial();
+                SQL_CON SC = new SQL_CON();
+                SqlDataAdapter r = new SqlDataAdapter("EXECUTE [dbo].[UpdateMaterial] @MaterialID ,@Name ,@PricePerTone ,@MinimumThreshold ,@Status ,@warehouse ,@ReceivedDate ,@ExpirationDate ,@Amount", SC.getConnection());
+                r.SelectCommand.Parameters.AddWithValue("@MaterialID", temp.Id);
+                r.SelectCommand.Parameters.AddWithValue("@Name", this.MATname.Text);
+                r.SelectCommand.Parameters.AddWithValue("@PricePerTone", this.priceperton.Text);
+                r.SelectCommand.Parameters.AddWithValue("@MinimumThreshold", this.minthersh.Text);
+                r.SelectCommand.Parameters.AddWithValue("@Status", this.Status.Text);
+                r.SelectCommand.Parameters.AddWithValue("@warehouse", this.Loc.Text);
+                string newDateTime = this.RecivedDate.Value.ToString("yyyy-MM-dd");
+                r.SelectCommand.Parameters.AddWithValue("@ReceivedDate", newDateTime);
+                newDateTime = this.ExpDate.Value.ToString("yyyy-MM-dd");
+                r.SelectCommand.Parameters.AddWithValue("@ExpirationDate", newDateTime);
+                r.SelectCommand.Parameters.AddWithValue("@Amount", this.AmountEX.Text);
+                SC.Execute_non_query(r);
+                temp.pricePerTon = decimal.Parse(this.priceperton.Text);
+                temp.minimumThreshold = decimal.Parse(this.minthersh.Text);
+                temp.Status = (Mstatus)Enum.Parse(typeof(Mstatus), this.Status.Text.Replace(' ', '_'));
+                temp.Name = this.MATname.Text;
+                temp.recivedDate = this.RecivedDate.Value;
+                temp.expirationDate = this.ExpDate.Value;
+                temp.amount = decimal.Parse(this.AmountEX.Text);
+                temp.Location = (Warehouse)Enum.Parse(typeof(Warehouse), this.Loc.Text.Replace(' ', '_'));
+
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show("could not create the material, plese try again");
+
+            }
+
         }
 
+        private Material updateMaterial()
+        {
+            if (string.IsNullOrWhiteSpace(MATID.Text) || string.IsNullOrWhiteSpace(MATname.Text) || string.IsNullOrWhiteSpace(priceperton.Text) || string.IsNullOrWhiteSpace(minthersh.Text) || string.IsNullOrWhiteSpace(AmountEX.Text))
+                throw new Exception(); // One or more of the textboxes are empty or contain only whitespace
+
+            if (((!(Program.IsValidMatID(MATID.Text))) || (!(Program.IsValidNumbers(priceperton.Text))) || (!(Program.IsValidNumbers(minthersh.Text)) || (!(Program.IsValidNumbers(AmountEX.Text))))))
+                throw new Exception(); // One or more of the textboxes are not valid
+
+            if (RecivedDate.Value > ExpDate.Value)
+                throw new Exception();
+
+            if (RecivedDate.Value.Equals(ExpDate.Value))
+                throw new Exception();
+
+            Material m = new Material(this.MATID.Text, this.MATname.Text, decimal.Parse(this.priceperton.Text), decimal.Parse(this.minthersh.Text),
+              (Mstatus)Enum.Parse(typeof(Mstatus), this.Status.Text.Replace(' ', '_')), (Warehouse)Enum.Parse(typeof(Warehouse), this.Loc.Text.Replace(' ', '_')),
+              this.RecivedDate.Value, this.ExpDate.Value, decimal.Parse(this.AmountEX.Text), false, true);
+
+            return m;
+        }
+
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (RecivedDate.Value > ExpDate.Value)
+                invalid_ExpDate.Show();
+            else
+                invalid_ExpDate.Hide();
+
+
+            if (RecivedDate.Value.Equals(ExpDate.Value))
+                invalid_ExpDate.Show();
+            else
+                invalid_ExpDate.Hide();
+        }
+
+        private void Status_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void Status_SelectedIndexChanged(object sender, EventArgs e)
+        private void invalid_ExpDate_Click(object sender, EventArgs e)
         {
 
         }

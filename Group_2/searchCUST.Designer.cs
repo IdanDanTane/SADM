@@ -43,6 +43,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.invalid_Zip = new System.Windows.Forms.Label();
             this.invalidPhone = new System.Windows.Forms.Label();
+            this.invalidEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -178,18 +179,30 @@
             // 
             this.invalidPhone.AutoSize = true;
             this.invalidPhone.ForeColor = System.Drawing.Color.Red;
-            this.invalidPhone.Location = new System.Drawing.Point(486, 307);
+            this.invalidPhone.Location = new System.Drawing.Point(486, 301);
             this.invalidPhone.Name = "invalidPhone";
             this.invalidPhone.Size = new System.Drawing.Size(270, 20);
             this.invalidPhone.TabIndex = 17;
             this.invalidPhone.Text = "phone number must contain 10 digits";
             this.invalidPhone.Click += new System.EventHandler(this.invalidPhone_Click);
             // 
+            // invalidEmail
+            // 
+            this.invalidEmail.AutoSize = true;
+            this.invalidEmail.ForeColor = System.Drawing.Color.Red;
+            this.invalidEmail.Location = new System.Drawing.Point(486, 117);
+            this.invalidEmail.Name = "invalidEmail";
+            this.invalidEmail.Size = new System.Drawing.Size(323, 20);
+            this.invalidEmail.TabIndex = 18;
+            this.invalidEmail.Text = "Email format: \" ***@***.com / org / co.il / gov \"";
+            this.invalidEmail.Click += new System.EventHandler(this.invalidEmail_Click);
+            // 
             // searchCUST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.invalidEmail);
             this.Controls.Add(this.invalidPhone);
             this.Controls.Add(this.invalid_Zip);
             this.Controls.Add(this.button3);
@@ -207,6 +220,7 @@
             this.Controls.Add(this.label1);
             this.Name = "searchCUST";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.searchCUST_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +243,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label invalid_Zip;
         private System.Windows.Forms.Label invalidPhone;
+        private System.Windows.Forms.Label invalidEmail;
     }
 }
