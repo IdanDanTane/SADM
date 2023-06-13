@@ -62,13 +62,13 @@
             this.birthDateDataGridViewTextBoxColumn,
             this.typeDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.getallemployeesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(101, 149);
+            this.dataGridView1.Location = new System.Drawing.Point(101, 11);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1115, 214);
+            this.dataGridView1.Size = new System.Drawing.Size(1115, 380);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

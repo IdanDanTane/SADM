@@ -46,8 +46,8 @@ namespace Group_2
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-
-            this.comboBox1.Location = new System.Drawing.Point(605, 301);
+            this.comboBox1.Location = new System.Drawing.Point(527, 349);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(130, 24);
             this.comboBox1.TabIndex = 2;
@@ -55,22 +55,19 @@ namespace Group_2
             // label1
             // 
             this.label1.AutoSize = true;
-
             this.label1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(456, 300);
+            this.label1.Location = new System.Drawing.Point(400, 350);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 23);
-
             this.label1.TabIndex = 6;
             this.label1.Text = "Material";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox1
             // 
-
-            this.textBox1.Location = new System.Drawing.Point(605, 191);
+            this.textBox1.Location = new System.Drawing.Point(527, 246);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 26);
+            this.textBox1.Size = new System.Drawing.Size(130, 22);
             this.textBox1.TabIndex = 7;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -78,7 +75,7 @@ namespace Group_2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(456, 191);
+            this.label2.Location = new System.Drawing.Point(400, 245);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 23);
             this.label2.TabIndex = 8;
@@ -90,12 +87,14 @@ namespace Group_2
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Material,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(781, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(727, 11);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(296, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(304, 504);
             this.dataGridView1.TabIndex = 9;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Material
             // 
@@ -116,9 +115,10 @@ namespace Group_2
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.button2.Location = new System.Drawing.Point(605, 539);
+            this.button2.Location = new System.Drawing.Point(560, 549);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 66);
+            this.button2.Size = new System.Drawing.Size(178, 53);
             this.button2.TabIndex = 10;
             this.button2.Text = "Withrawal from stock";
             this.button2.UseVisualStyleBackColor = true;
@@ -127,9 +127,10 @@ namespace Group_2
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(26, 582);
+            this.button1.Location = new System.Drawing.Point(33, 587);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 50);
+            this.button1.Size = new System.Drawing.Size(107, 40);
             this.button1.TabIndex = 11;
             this.button1.Text = "Back";
             this.button1.UseVisualStyleBackColor = true;
@@ -137,12 +138,11 @@ namespace Group_2
             // 
             // updateStock_ShiftManager
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1282, 653);
-
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
@@ -150,10 +150,10 @@ namespace Group_2
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "updateStock_ShiftManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "updateStock_ShiftManager";
+            this.Load += new System.EventHandler(this.updateStock_ShiftManager_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -71,13 +71,13 @@
             this.viewMAT2.AllowUserToAddRows = false;
             this.viewMAT2.AllowUserToDeleteRows = false;
             this.viewMAT2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewMAT2.Location = new System.Drawing.Point(129, 92);
+            this.viewMAT2.Location = new System.Drawing.Point(35, 32);
             this.viewMAT2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewMAT2.Name = "viewMAT2";
             this.viewMAT2.ReadOnly = true;
             this.viewMAT2.RowHeadersWidth = 62;
             this.viewMAT2.RowTemplate.Height = 28;
-            this.viewMAT2.Size = new System.Drawing.Size(1011, 281);
+            this.viewMAT2.Size = new System.Drawing.Size(1200, 341);
             this.viewMAT2.TabIndex = 2;
             this.viewMAT2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 

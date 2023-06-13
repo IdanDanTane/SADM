@@ -77,6 +77,19 @@ namespace Group_2
                 button2.Enabled = false;
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void updateStock_ShiftManager_Load_1(object sender, EventArgs e)
+        {
+            foreach (Material m in Program.Materials)
+            {
+                dataGridView1.Rows.Add(m.Id, m.amount);
+            }
+        }
     }
     
 }
