@@ -43,6 +43,11 @@ namespace Group_2
             {
                 return;
             }
+            if (amountToWithdraw > selectedMaterial.amount)
+            {
+                MessageBox.Show("The amount in stock is lower than the withdrawal query");
+                return;
+            }
 
             SQL_CON sqlConn = new SQL_CON();
             SqlDataAdapter cmd = new SqlDataAdapter("EXECUTE [dbo].[WithrawalFromMaterialAmount] @ID, @amountToWithdrawal", sqlConn.getConnection());
