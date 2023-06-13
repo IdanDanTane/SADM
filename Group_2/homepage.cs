@@ -24,7 +24,7 @@ namespace Group_2
             {
                 showFoodTechnologistButtons();
             }
-            if (GetLoggedUserType().Equals("Shift_manage"))
+            if (GetLoggedUserType().Equals("Shift_manager"))
             {
                 showShiftManagerButtons();
             }
