@@ -184,6 +184,19 @@
   </ItemGroup>
   <ItemGroup>
 
+    <Compile Include="ProductionFormForCEO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductionFormForCEO.Designer.cs">
+      <DependentUpon>ProductionFormForCEO.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="CreateForecast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateForecast.Designer.cs">
+      <DependentUpon>CreateForecast.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forecast.cs" />
 
     <Compile Include="ProductionFormForShift.cs">
@@ -192,7 +205,6 @@
     <Compile Include="ProductionFormForShift.Designer.cs">
       <DependentUpon>ProductionFormForShift.cs</DependentUpon>
     </Compile>
-
     <Compile Include="ProductionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +320,12 @@
       <DependentUpon>searchProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Shift.cs" />
+    <Compile Include="ShowForecast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowForecast.Designer.cs">
+      <DependentUpon>ShowForecast.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQL_CON.cs" />
     <Compile Include="CreateEmployee.cs">
       <SubType>Form</SubType>
@@ -376,6 +394,9 @@
     <EmbeddedResource Include="Create fault.resx">
       <DependentUpon>Create fault.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateForecast.resx">
+      <DependentUpon>CreateForecast.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="createProduct.resx">
       <DependentUpon>createProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="manageProducts.resx">
       <DependentUpon>manageProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductionFormForCEO.resx">
+      <DependentUpon>ProductionFormForCEO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductionFormForShift.resx">
       <DependentUpon>ProductionFormForShift.cs</DependentUpon>
@@ -435,6 +459,9 @@
     </Compile>
     <EmbeddedResource Include="searchProduct.resx">
       <DependentUpon>searchProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowForecast.resx">
+      <DependentUpon>ShowForecast.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="updateStock_CEO.resx">
       <DependentUpon>updateStock_CEO.cs</DependentUpon>

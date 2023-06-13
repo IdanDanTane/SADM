@@ -20,7 +20,25 @@ namespace Group_2
             {
                 showCEOButtons();
             }
+            if (GetLoggedUserType().Equals("Food_technologist"))
+            {
+                showFoodTechnologistButtons();
+            }
+            if (GetLoggedUserType().Equals("Shift_manage"))
+            {
+                showShiftManagerButtons();
+            }
+            if (GetLoggedUserType().Equals("Stock_keeper"))
+            {
+                showStockKeeperButtons();
+            }
+            if (GetLoggedUserType().Equals("Warehouse_manager"))
+            {
+                showWareHouseManagerButtons();
+            }
+
         }
+
         public void hideAllButtons()
         {
             productionForm.Hide();
@@ -47,6 +65,32 @@ namespace Group_2
             forecast.Show();
         }
 
+
+        public void showFoodTechnologistButtons()
+        {
+            productionForm.Show();
+            products.Show();
+            forecast.Show();
+        }
+
+        public void showShiftManagerButtons()
+        {
+            EndshiftReport.Show();
+            updateStock.Show();
+        }
+
+        public void showStockKeeperButtons()
+        {
+            updateStock.Show();
+        }
+
+        public void showWareHouseManagerButtons()
+        {
+            products.Show();
+            materials.Show();
+            updateStock.Show();
+        }
+
         private string GetLoggedUserType()
         {
             return Login.GetEmployeeType();
@@ -61,7 +105,7 @@ namespace Group_2
 
         private void customers_Click(object sender, EventArgs e)
         {
-            manageCustomers manageCustomers = new manageCustomers();  
+            manageCustomers manageCustomers = new manageCustomers();
             manageCustomers.Show();
             this.Hide();
         }
@@ -86,19 +130,19 @@ namespace Group_2
             manageProducts Products = new manageProducts();
             Products.Show();
             this.Hide();
-            }
+        }
 
         private void incomeReport_Click(object sender, EventArgs e)
         {
             Create_fault CF = new Create_fault();
-            
-        CF.Show();
+
+            CF.Show();
             this.Hide();
         }
-         private void EndshiftReport_Click(object sender, EventArgs e)
+        private void EndshiftReport_Click(object sender, EventArgs e)
         {
             CreateShiftReport SR = new CreateShiftReport();
-           SR.Show();
+            SR.Show();
             this.Hide();
         }
 
@@ -128,18 +172,72 @@ namespace Group_2
 
             }
 
+            if (GetLoggedUserType().Equals("Warehouse_manager"))
+            {
+                updateStock_CEO updateStockForm = new updateStock_CEO();
+                updateStockForm.Show();
+                this.Hide();
+
+            }
+        }
+            
+
         private void productionForm_Click(object sender, EventArgs e)
         {
-            ProductionForm pr = new ProductionForm();
-            pr.Show();
-            this.Hide();
+            if (GetLoggedUserType().Equals("Food_technologist"))
+            {
+                ProductionFormForCEO ProductionCEO = new ProductionFormForCEO();
+                ProductionCEO.Show();
+                this.Hide();
+            }
+            if (GetLoggedUserType().Equals("CEO"))
+            {
+                ProductionFormForCEO ProductionCEO = new ProductionFormForCEO();
+                ProductionCEO.Show();
+            }
+
+            if (GetLoggedUserType().Equals ("shift_Manager")){
+                ProductionFormForShift pr = new ProductionFormForShift();
+                pr.Show();
+
+                this.Hide();
+            }
+     
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ProductionFormForShift pr = new ProductionFormForShift();
-            pr.Show();
-            this.Hide();
+            
+
+        }
+
+        private void forecast_Click(object sender, EventArgs e)
+        {
+            CreateForecast cf = new CreateForecast();
+            cf.Show();
+        }
+
+        private void updateStock_Click_1(object sender, EventArgs e)
+        {
+            if (GetLoggedUserType().Equals("Shift_manager"))
+            {
+                updateStock_ShiftManager updateStockForm = new updateStock_ShiftManager();
+                updateStockForm.Show();
+                this.Hide();
+            }
+            if (GetLoggedUserType().Equals("Stock_keeper"))
+            {
+                updateStock_StockKeeper updatestockForm = new updateStock_StockKeeper();
+                updatestockForm.Show();
+                this.Hide();
+            }
+            if (GetLoggedUserType().Equals("CEO"))
+            {
+                updateStock_CEO updateStockForm = new updateStock_CEO();
+                updateStockForm.Show();
+                this.Hide();
+
+            }
 
         }
     }
