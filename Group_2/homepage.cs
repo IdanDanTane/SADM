@@ -47,6 +47,7 @@ namespace Group_2
             forecast.Show();
         }
 
+
         private string GetLoggedUserType()
         {
             return Login.GetEmployeeType();
@@ -61,7 +62,7 @@ namespace Group_2
 
         private void customers_Click(object sender, EventArgs e)
         {
-            manageCustomers manageCustomers = new manageCustomers();  
+            manageCustomers manageCustomers = new manageCustomers();
             manageCustomers.Show();
             this.Hide();
         }
@@ -86,19 +87,19 @@ namespace Group_2
             manageProducts Products = new manageProducts();
             Products.Show();
             this.Hide();
-            }
+        }
 
         private void incomeReport_Click(object sender, EventArgs e)
         {
             Create_fault CF = new Create_fault();
-            
-        CF.Show();
+
+            CF.Show();
             this.Hide();
         }
-         private void EndshiftReport_Click(object sender, EventArgs e)
+        private void EndshiftReport_Click(object sender, EventArgs e)
         {
             CreateShiftReport SR = new CreateShiftReport();
-           SR.Show();
+            SR.Show();
             this.Hide();
         }
 
@@ -127,20 +128,35 @@ namespace Group_2
                 this.Hide();
 
             }
+        }
 
         private void productionForm_Click(object sender, EventArgs e)
         {
-            ProductionForm pr = new ProductionForm();
-            pr.Show();
-            this.Hide();
+            
+
+            if (GetLoggedUserType().Equals ("shift_Manager")){
+                ProductionFormForShift pr = new ProductionFormForShift();
+                pr.Show();
+                this.Hide();
+            }
+            else
+            {
+                ProductionForm pr = new ProductionForm();
+                pr.Show();
+                this.Hide();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ProductionFormForShift pr = new ProductionFormForShift();
-            pr.Show();
-            this.Hide();
+            
 
+        }
+
+        private void forecast_Click(object sender, EventArgs e)
+        {
+            CreateForecast cf = new CreateForecast();
+            cf.Show();
         }
     }
 }

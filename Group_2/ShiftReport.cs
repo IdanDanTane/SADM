@@ -10,10 +10,10 @@ namespace Group_2
 {
     public class ShiftReport
     {
-        public string shiftID;
+        public int shiftID;
         public Dictionary<Product, decimal> produced { get; set; }
 
-        public ShiftReport(string shiftID, bool isNew)
+        public ShiftReport(int shiftID, bool isNew)
         {
             this.shiftID = shiftID;
             if (isNew)
