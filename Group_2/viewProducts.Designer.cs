@@ -51,13 +51,13 @@
             this.viewProduct.AllowUserToAddRows = false;
             this.viewProduct.AllowUserToDeleteRows = false;
             this.viewProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.viewProduct.Location = new System.Drawing.Point(212, 50);
+            this.viewProduct.Location = new System.Drawing.Point(57, 44);
             this.viewProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.viewProduct.Name = "viewProduct";
             this.viewProduct.ReadOnly = true;
             this.viewProduct.RowHeadersWidth = 62;
             this.viewProduct.RowTemplate.Height = 28;
-            this.viewProduct.Size = new System.Drawing.Size(860, 325);
+            this.viewProduct.Size = new System.Drawing.Size(1183, 346);
             this.viewProduct.TabIndex = 2;
             this.viewProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

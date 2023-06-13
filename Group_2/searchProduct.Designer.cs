@@ -57,10 +57,9 @@
             // Type
             // 
             this.Type.FormattingEnabled = true;
-            this.Type.Location = new System.Drawing.Point(688, 478);
-            this.Type.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Type.Location = new System.Drawing.Point(612, 382);
             this.Type.Name = "Type";
-            this.Type.Size = new System.Drawing.Size(223, 28);
+            this.Type.Size = new System.Drawing.Size(199, 24);
             this.Type.TabIndex = 26;
             this.Type.SelectedIndexChanged += new System.EventHandler(this.Type_SelectedIndexChanged);
             // 
@@ -68,9 +67,9 @@
             // 
             this.ProductType.AutoSize = true;
             this.ProductType.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.ProductType.Location = new System.Drawing.Point(428, 476);
+            this.ProductType.Location = new System.Drawing.Point(380, 381);
             this.ProductType.Name = "ProductType";
-            this.ProductType.Size = new System.Drawing.Size(196, 28);
+            this.ProductType.Size = new System.Drawing.Size(160, 23);
             this.ProductType.TabIndex = 25;
             this.ProductType.Text = "Product type :";
             // 
@@ -78,47 +77,42 @@
             // 
             this.expirationDate.CustomFormat = "yyyy-MM-dd";
             this.expirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.expirationDate.Location = new System.Drawing.Point(688, 409);
-            this.expirationDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.expirationDate.Location = new System.Drawing.Point(612, 327);
             this.expirationDate.Name = "expirationDate";
-            this.expirationDate.Size = new System.Drawing.Size(223, 26);
+            this.expirationDate.Size = new System.Drawing.Size(199, 22);
             this.expirationDate.TabIndex = 24;
             this.expirationDate.ValueChanged += new System.EventHandler(this.expirationDate_ValueChanged);
             // 
             // pricePerTon
             // 
-            this.pricePerTon.Location = new System.Drawing.Point(688, 566);
-            this.pricePerTon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pricePerTon.Location = new System.Drawing.Point(612, 453);
             this.pricePerTon.Name = "pricePerTon";
-            this.pricePerTon.Size = new System.Drawing.Size(223, 26);
+            this.pricePerTon.Size = new System.Drawing.Size(199, 22);
             this.pricePerTon.TabIndex = 23;
             this.pricePerTon.TextChanged += new System.EventHandler(this.pricePerTon_TextChanged);
             // 
             // productName
             // 
-            this.productName.Location = new System.Drawing.Point(688, 324);
-            this.productName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.productName.Location = new System.Drawing.Point(612, 259);
             this.productName.Name = "productName";
-            this.productName.Size = new System.Drawing.Size(223, 26);
+            this.productName.Size = new System.Drawing.Size(199, 22);
             this.productName.TabIndex = 22;
             this.productName.TextChanged += new System.EventHandler(this.productName_TextChanged);
             // 
             // productID
             // 
-            this.productID.Location = new System.Drawing.Point(688, 246);
-            this.productID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.productID.Location = new System.Drawing.Point(612, 197);
             this.productID.Name = "productID";
-            this.productID.Size = new System.Drawing.Size(223, 26);
+            this.productID.Size = new System.Drawing.Size(199, 22);
             this.productID.TabIndex = 21;
             this.productID.TextChanged += new System.EventHandler(this.productID_TextChanged);
             // 
             // search_Product
             // 
             this.search_Product.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.search_Product.Location = new System.Drawing.Point(372, 708);
-            this.search_Product.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.search_Product.Location = new System.Drawing.Point(331, 566);
             this.search_Product.Name = "search_Product";
-            this.search_Product.Size = new System.Drawing.Size(225, 62);
+            this.search_Product.Size = new System.Drawing.Size(200, 50);
             this.search_Product.TabIndex = 20;
             this.search_Product.Text = "search product";
             this.search_Product.UseVisualStyleBackColor = true;
@@ -128,9 +122,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label6.Location = new System.Drawing.Point(430, 565);
+            this.label6.Location = new System.Drawing.Point(382, 452);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(196, 28);
+            this.label6.Size = new System.Drawing.Size(158, 23);
             this.label6.TabIndex = 19;
             this.label6.Text = "Price per ton :";
             // 
@@ -138,9 +132,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.Location = new System.Drawing.Point(396, 408);
+            this.label5.Location = new System.Drawing.Point(352, 326);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(231, 28);
+            this.label5.Size = new System.Drawing.Size(188, 23);
             this.label5.TabIndex = 18;
             this.label5.Text = "Expiration date :";
             // 
@@ -148,9 +142,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(414, 324);
+            this.label4.Location = new System.Drawing.Point(368, 259);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(211, 28);
+            this.label4.Size = new System.Drawing.Size(172, 23);
             this.label4.TabIndex = 17;
             this.label4.Text = "Product name :";
             // 
@@ -158,35 +152,35 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(440, 245);
+            this.label3.Location = new System.Drawing.Point(391, 196);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 28);
+            this.label3.Size = new System.Drawing.Size(140, 23);
             this.label3.TabIndex = 16;
             this.label3.Text = "Product ID : ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 66);
+            this.label2.Location = new System.Drawing.Point(69, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 20);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 15;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 15);
+            this.label1.Location = new System.Drawing.Point(69, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 20);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 14;
             // 
             // back
             // 
             this.back.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.back.Location = new System.Drawing.Point(47, 721);
+            this.back.Location = new System.Drawing.Point(42, 577);
             this.back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(135, 62);
+            this.back.Size = new System.Drawing.Size(120, 50);
             this.back.TabIndex = 27;
             this.back.Text = "back";
             this.back.UseVisualStyleBackColor = true;
@@ -195,10 +189,10 @@
             // deleteProduct
             // 
             this.deleteProduct.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.deleteProduct.Location = new System.Drawing.Point(642, 708);
+            this.deleteProduct.Location = new System.Drawing.Point(571, 566);
             this.deleteProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.deleteProduct.Name = "deleteProduct";
-            this.deleteProduct.Size = new System.Drawing.Size(225, 62);
+            this.deleteProduct.Size = new System.Drawing.Size(200, 50);
             this.deleteProduct.TabIndex = 28;
             this.deleteProduct.Text = "Delete Product";
             this.deleteProduct.UseVisualStyleBackColor = true;
@@ -207,10 +201,10 @@
             // update_Product
             // 
             this.update_Product.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.update_Product.Location = new System.Drawing.Point(914, 708);
+            this.update_Product.Location = new System.Drawing.Point(812, 566);
             this.update_Product.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.update_Product.Name = "update_Product";
-            this.update_Product.Size = new System.Drawing.Size(225, 62);
+            this.update_Product.Size = new System.Drawing.Size(200, 50);
             this.update_Product.TabIndex = 29;
             this.update_Product.Text = "update Product";
             this.update_Product.UseVisualStyleBackColor = true;
@@ -223,12 +217,11 @@
             this.needed,
             this.MaterialID,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(946, 72);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(841, 58);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(441, 271);
+            this.dataGridView1.Size = new System.Drawing.Size(429, 357);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -260,9 +253,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(1092, 35);
+            this.label8.Location = new System.Drawing.Point(971, 28);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 28);
+            this.label8.Size = new System.Drawing.Size(129, 23);
             this.label8.TabIndex = 30;
             this.label8.Text = "Materials  :";
             // 
@@ -270,19 +263,19 @@
             // 
             this.invalid_ExpDate.AutoSize = true;
             this.invalid_ExpDate.ForeColor = System.Drawing.Color.Red;
-            this.invalid_ExpDate.Location = new System.Drawing.Point(684, 439);
+            this.invalid_ExpDate.Location = new System.Drawing.Point(608, 351);
             this.invalid_ExpDate.Name = "invalid_ExpDate";
-            this.invalid_ExpDate.Size = new System.Drawing.Size(213, 20);
+            this.invalid_ExpDate.Size = new System.Drawing.Size(176, 16);
             this.invalid_ExpDate.TabIndex = 32;
             this.invalid_ExpDate.Text = "Exp date must be after today";
             // 
             // searchProduct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(900, 562);
+            this.ClientSize = new System.Drawing.Size(1282, 653);
             this.Controls.Add(this.invalid_ExpDate);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label8);
