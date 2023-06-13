@@ -74,7 +74,8 @@
             // 
             // products
             // 
-            this.products.Location = new System.Drawing.Point(474, 69);
+
+            this.products.Location = new System.Drawing.Point(480, 86);
             this.products.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.products.Name = "products";
             this.products.Size = new System.Drawing.Size(92, 30);
@@ -85,7 +86,9 @@
             // 
             // materials
             // 
-            this.materials.Location = new System.Drawing.Point(482, 138);
+
+            this.materials.Location = new System.Drawing.Point(480, 163);
+
             this.materials.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.materials.Name = "materials";
             this.materials.Size = new System.Drawing.Size(84, 27);
@@ -103,6 +106,7 @@
             this.forecast.TabIndex = 5;
             this.forecast.Text = "create forecast";
             this.forecast.UseVisualStyleBackColor = true;
+            this.forecast.Click += new System.EventHandler(this.forecast_Click);
             // 
             // incomeReport
             // 
@@ -128,7 +132,8 @@
             // 
             // EndshiftReport
             // 
-            this.EndshiftReport.Location = new System.Drawing.Point(474, 185);
+
+            this.EndshiftReport.Location = new System.Drawing.Point(480, 231);
             this.EndshiftReport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.EndshiftReport.Name = "EndshiftReport";
             this.EndshiftReport.Size = new System.Drawing.Size(153, 77);
@@ -163,7 +168,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 360);
+
+            this.ClientSize = new System.Drawing.Size(1130, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.updateStock);
             this.Controls.Add(this.EndshiftReport);
