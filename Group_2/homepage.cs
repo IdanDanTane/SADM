@@ -20,7 +20,25 @@ namespace Group_2
             {
                 showCEOButtons();
             }
+            if (GetLoggedUserType().Equals("Food_technologist"))
+            {
+                showFoodTechnologistButtons();
+            }
+            if (GetLoggedUserType().Equals("Shift_manager"))
+            {
+                showShiftManagerButtons();
+            }
+            if (GetLoggedUserType().Equals("Stock_keeper"))
+            {
+                showStockKeeperButtons();
+            }
+            if (GetLoggedUserType().Equals("Warehouse_manager"))
+            {
+                showWareHouseManagerButtons();
+            }
+
         }
+
         public void hideAllButtons()
         {
             productionForm.Hide();
@@ -45,6 +63,32 @@ namespace Group_2
             incomeReport.Show();
             EndshiftReport.Show();
             forecast.Show();
+        }
+
+
+        public void showFoodTechnologistButtons()
+        {
+            productionForm.Show();
+            products.Show();
+            forecast.Show();
+        }
+
+        public void showShiftManagerButtons()
+        {
+            EndshiftReport.Show();
+            updateStock.Show();
+        }
+
+        public void showStockKeeperButtons()
+        {
+            updateStock.Show();
+        }
+
+        public void showWareHouseManagerButtons()
+        {
+            products.Show();
+            materials.Show();
+            updateStock.Show();
         }
 
         private string GetLoggedUserType()
@@ -127,20 +171,74 @@ namespace Group_2
                 this.Hide();
 
             }
-        }
 
-            private void productionForm_Click(object sender, EventArgs e)
+
+            if (GetLoggedUserType().Equals("Warehouse_manager"))
             {
-                ProductionForm pr = new ProductionForm();
-                pr.Show();
+                updateStock_CEO updateStockForm = new updateStock_CEO();
+                updateStockForm.Show();
+                this.Hide();
+
+            }
+        }
+            
+
+        private void productionForm_Click(object sender, EventArgs e)
+        {
+            if (GetLoggedUserType().Equals("Food_technologist"))
+            {
+                ProductionFormForCEO ProductionCEO = new ProductionFormForCEO();
+                ProductionCEO.Show();
                 this.Hide();
             }
-
-            private void button2_Click(object sender, EventArgs e)
+            if (GetLoggedUserType().Equals("CEO"))
             {
+                ProductionFormForCEO ProductionCEO = new ProductionFormForCEO();
+                ProductionCEO.Show();
+            }
+
+            if (GetLoggedUserType().Equals ("shift_Manager")){
                 ProductionFormForShift pr = new ProductionFormForShift();
                 pr.Show();
+
                 this.Hide();
+            }
+     
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void forecast_Click(object sender, EventArgs e)
+        {
+            CreateForecast cf = new CreateForecast();
+            cf.Show();
+        }
+
+        private void updateStock_Click_1(object sender, EventArgs e)
+        {
+            if (GetLoggedUserType().Equals("Shift_manager"))
+            {
+                updateStock_ShiftManager updateStockForm = new updateStock_ShiftManager();
+                updateStockForm.Show();
+                this.Hide();
+            }
+            if (GetLoggedUserType().Equals("Stock_keeper"))
+            {
+                updateStock_StockKeeper updatestockForm = new updateStock_StockKeeper();
+                updatestockForm.Show();
+                this.Hide();
+            }
+            if (GetLoggedUserType().Equals("CEO"))
+            {
+                updateStock_CEO updateStockForm = new updateStock_CEO();
+                updateStockForm.Show();
+                this.Hide();
+
+            }
 
             }
         }

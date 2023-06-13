@@ -45,7 +45,9 @@ namespace Group_2
 
         private void crepo_Click(object sender, EventArgs e)
         {
-            ShiftReport SR = new ShiftReport(ShiftID.Text, true);
+            int shiftID;
+            int.TryParse(ShiftID.Text, out shiftID);
+            ShiftReport SR = new ShiftReport(shiftID, true);
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null)

@@ -10,11 +10,13 @@ namespace Group_2
     {
         public int serialNumber;
         public DateTime time;
+        public static int serialNum = 1;
 
-        public Shift(int SN, DateTime time, bool isNew)
+        public Shift(DateTime time, bool isNew)
         {
-            this.serialNumber = SN;
+            this.serialNumber = serialNum;
             this.time = time;
+            serialNum++;
             if (isNew)
             {
                 Program.Shifts.Add(this);
@@ -26,9 +28,9 @@ namespace Group_2
         {
             Fault f = new Fault(Mtype, Ftype, urgancy, Fstatus, true);
         }
-        public void createReport(string shiftID)
+        public void createReport()
         {
-            ShiftReport sr = new ShiftReport(shiftID, true);
+            ShiftReport sr = new ShiftReport(this.serialNumber, true);
         }
     }
     
